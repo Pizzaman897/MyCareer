@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <?php require_once __DIR__ . '/../component/Header.php'; ?>
+        <?php require_once '../app/views/component/Header.php'; ?>
     </header>
 
     <main class="landing-hero">
@@ -23,7 +23,7 @@
         </div>
     </main>
     <footer>
-        <?php require_once __DIR__ . '/../component/Footer.php'; ?>
+        <?php require_once '../app/views/component/Footer.php'; ?>
     </footer>
 </body>
 </html>
