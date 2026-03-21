@@ -8,7 +8,6 @@ function setPositions(aClass, bClass, cClass) {
     cardC.className = 'final-card ' + cClass;
 }
 
-// Animation sequence: initial => swap positions => middle returns
 setTimeout(() => setPositions('move-right','move-center','move-left'), 400);
 setTimeout(() => setPositions('move-left','move-right','move-center'), 1400);
 setTimeout(() => setPositions('move-left','move-center','move-right'), 2200);
