@@ -1,0 +1,106 @@
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.page-wrap {
+    max-width: 920px;
+}
+
+main.interests-card {
+    max-width: 880px;
+}
+
+.interest-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #f8fafc;
+    color: #111827;
+    width: 100%;
+    height: 112px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.interest-card .card-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6);
+    transition: filter 0.2s ease;
+}
+
+.interest-card .card-label {
+    position: relative;
+    z-index: 2;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.45);
+    margin-bottom: 0;
+}
+
+.interest-card .checkmark {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    font-size: 14px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.interest-card.selected {
+    border-color: #2563eb;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+    transform: translateY(-2px);
+}
+
+.interest-card.selected .card-image {
+    filter: brightness(0.4);
+}
+
+.interest-card.selected .checkmark {
+    display: flex;
+}
+
+.button-container {
+    margin-top: 8px;
+}
+
+#selectionResult {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 600;
+}
+
+@media (max-width: 940px) {
+    .interests-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@media (max-width: 720px) {
+    .interests-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 520px) {
+    .interests-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .interests-card {
+        padding: 20px 16px;
+    }
+}

@@ -20,7 +20,8 @@ $router->add('GET', '/interests3', 'InterestController3', 'index3');
 // Daftar Minat dan Keterampilan step 4
 $router->add('GET', '/interests4', 'InterestController4', 'index4');
 
-
+// Daftar Minat dan Keterampilan step 5
+$router->add('GET', '/interests5', 'InterestController5', 'index5');
 
 $router->run();
 
