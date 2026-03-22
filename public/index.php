@@ -23,6 +23,12 @@ $router->add('GET', '/interests4', 'InterestController4', 'index4');
 // Daftar Minat dan Keterampilan step 5
 $router->add('GET', '/interests5', 'InterestController5', 'index5');
 
+//Home page
+$router->add('GET', '/home', 'HomeController', 'home');
+
+//Rekomendasi karir
+$router->add('GET', '/recommendations', 'RecommendationController', 'recommendations');
+
 $router->run();
 
 ?>
