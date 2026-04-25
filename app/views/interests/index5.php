@@ -24,6 +24,10 @@
                     <div class="final-card card-right" id="cardC"><img src="/asset/Playing Music.png" alt="Playing Music"></div>
                 </div>
             </div>
+
+            <div class="button-container">
+                <button type="button" class="submit" onclick="window.location.href='/home'">Go to Home</button>
+            </div>
         </main>
     </div>
 

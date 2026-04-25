@@ -15,7 +15,7 @@
         <div class="landing-hero-content">
             <h1>Find Your Passion, Determine Your Future</h1>
             <p>An interest and career path exploration platform to help students identify their potential and plan their future more purposefully.</p>
-            <a class="landing-hero-cta" href="/menu">START</a>
+            <a class="landing-hero-cta" href="/signin">START</a>
         </div>
 
         <div class="landing-hero-image">

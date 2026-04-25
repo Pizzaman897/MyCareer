@@ -1,12 +1,12 @@
 <?php
 namespace App\Controllers;
 
-class RecommendationController
+use App\Core\Controller;
+
+class RecommendationController extends Controller
 {
     public function recommendations()
     {
-        require_once '../app/views/recommendations/recommendations.php';
+        $this->view('recommendations.recommendations');
     }
 }
-
-?>

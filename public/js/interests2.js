@@ -13,4 +13,7 @@ continueBtn.addEventListener('click', function () {
     result.style.display = 'block';
     result.textContent = `Great, ${name}! Step 2 complete.`;
     result.style.color = '#065f46';
+    setTimeout(() => {
+        window.location.href = '/interests3';
+    }, 600);
 });

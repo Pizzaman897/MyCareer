@@ -1,12 +1,12 @@
 <?php
 namespace App\Controllers;
 
-class HomeController
+use App\Core\Controller;
+
+class HomeController extends Controller
 {
     public function home()
     {
-        require_once '../app/views/home/home.php';
+        $this->view('home.home');
     }
 }
-
-?>

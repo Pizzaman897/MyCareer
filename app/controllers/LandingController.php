@@ -1,11 +1,12 @@
 <?php
 namespace App\Controllers;
-class LandingController
+
+use App\Core\Controller;
+
+class LandingController extends Controller
 {
     public function landing()
-        {
-            require_once '../app/views/landing.php';
-        }
+    {
+        $this->view('landing');
+    }
 }
-
-   

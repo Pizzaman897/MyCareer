@@ -1,5 +1,6 @@
 <?php
-require_once '../app/core/Router.php';
+require_once __DIR__ . '/../app/core/Controller.php';
+require_once __DIR__ . '/../app/core/Router.php';
 
 use App\Core\Router;
 
@@ -7,6 +8,10 @@ $router = new Router();
 
 //register routes
 $router->add('GET', '/landing', 'LandingController', 'landing');
+
+// Sign in page
+$router->add('GET', '/signin', 'SigninController', 'signin');
+$router->add('POST', '/signin', 'SigninController', 'authenticate');
 
 // Daftar Minat dan Keterampilan
 $router->add('GET', '/interests', 'InterestController', 'index');

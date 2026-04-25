@@ -1,12 +1,12 @@
 <?php
 namespace App\Controllers;
 
-class InterestController
+use App\Core\Controller;
+
+class InterestController extends Controller
 {
     public function index()
     {
-        require_once '../app/views/interests/index.php';
+        $this->view('interests.index');
     }
 }
-
-?>

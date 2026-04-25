@@ -18,6 +18,13 @@ const updateCTA = () => {
 
 cards.forEach(card => {
     card.addEventListener('click', () => {
+        const selected = document.querySelectorAll('.interest-card.selected');
+        if (!card.classList.contains('selected') && selected.length >= 3) {
+            result.style.display = 'block';
+            result.style.color = '#dc2626';
+            result.textContent = 'You can only select up to 3 interests.';
+            return;
+        }
         card.classList.toggle('selected');
         updateCTA();
     });
