@@ -13,6 +13,10 @@ $router->add('GET', '/landing', 'LandingController', 'landing');
 $router->add('GET', '/signin', 'SigninController', 'signin');
 $router->add('POST', '/signin', 'SigninController', 'authenticate');
 
+// Create Account page
+$router->add('GET', '/create', 'CreateController', 'create');
+$router->add('POST', '/create', 'CreateController', 'store');
+
 // Daftar Minat dan Keterampilan
 $router->add('GET', '/interests', 'InterestController', 'index');
 

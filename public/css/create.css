@@ -1,5 +1,4 @@
-  
-  * {
+* {
     box-sizing: border-box;
 }
 
@@ -11,7 +10,7 @@ body {
     color: #111;
 }
 
-.signin-page {
+.create-page {
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-height: 100vh;
@@ -20,14 +19,14 @@ body {
     padding: 40px;
 }
 
-.signin-card {
+.create-card {
     padding: 40px 32px;
     max-width: 500px;
     width: 100%;
     justify-self: center;
 }
 
-.signin-card h1 {
+.create-card h1 {
     margin: 0 0 28px;
     font-size: 2.8rem;
     letter-spacing: -0.04em;
@@ -61,37 +60,6 @@ body {
     outline: none;
     border-color: #5D4CDB;
     box-shadow: 0 0 0 4px rgba(93, 76, 219, 0.08);
-}
-
-.form-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 22px;
-}
-
-.form-row .checkbox-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #5E6278;
-    font-size: 0.92rem;
-}
-
-.form-row .checkbox-group input {
-    width: 16px;
-    height: 16px;
-}
-
-.form-row a {
-    color: #44476C;
-    font-size: 0.92rem;
-    text-decoration: none;
-}
-
-.form-row a:hover {
-    text-decoration: underline;
 }
 
 .cta-button {
@@ -203,7 +171,7 @@ body {
 }
 
 @media (max-width: 960px) {
-    .signin-page {
+    .create-page {
         grid-template-columns: 1fr;
         padding: 32px 20px;
         gap: 30px;
@@ -212,10 +180,15 @@ body {
     .side-image {
         max-width: 100%;
     }
+
+    .create-card {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 @media (max-width: 600px) {
-    .signin-card {
+    .create-card {
         padding: 28px 20px;
     }
 }

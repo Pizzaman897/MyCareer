@@ -59,7 +59,7 @@ $message = $message ?? '';
                 </a>
             </div>
 
-            <p class="bottom-note">Don’t have an account? <a href="#">Create Account</a></p>
+            <p class="bottom-note">Don't have an account? <a href="/create">Create Account</a></p>
         </section>
 
         <aside class="side-panel">
