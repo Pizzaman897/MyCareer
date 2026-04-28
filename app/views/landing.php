@@ -22,8 +22,5 @@
             <img src="/asset/Landing-Page-Picture.png" alt="Students planning their future">
         </div>
     </main>
-    <footer>
-        <?php require_once '../app/views/component/Footer.php'; ?>
-    </footer>
 </body>
 </html>
