@@ -53,6 +53,7 @@
     background: #2c2c2c;
     color: rgba(255, 255, 255, 0.85);
     font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 20px;
     box-sizing: border-box;
 }
 
@@ -72,7 +73,7 @@
 
 .mycareer-footer__col h4 {
     margin: 0 0 16px;
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.9);
@@ -83,7 +84,7 @@
     margin-bottom: 10px;
     color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .mycareer-footer__col a:hover {
