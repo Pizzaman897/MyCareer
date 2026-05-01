@@ -3,8 +3,8 @@
         <div class="mycareer-footer__col">
             <h4>Company</h4>
             <a href="/about">About Us</a>
-            <a href="/support">Supported Devices</a>
-            <a href="/careers">Careers</a>
+            <a href="/mail">Mail</a>
+            <a href="/favorite">Favorite</a>
         </div>
 
         <div class="mycareer-footer__col">
@@ -50,11 +50,7 @@
     width: 100%;
     height: 380px;
     padding: 80px 64px;
-    background: #2c2c2c;
-    color: rgba(255, 255, 255, 0.85);
-    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 20px;
-    box-sizing: border-box;
+        background: #0a0a0a;
 }
 
 .mycareer-footer__columns {

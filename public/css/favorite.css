@@ -1,0 +1,130 @@
+/* Favorite page styles */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #ffffff;
+}
+
+.favorite-page {
+    min-height: calc(100vh - 120px);
+    padding: 40px 24px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.favorite-header {
+    width: min(100%, 1136px);
+    margin-bottom: 52px;
+}
+
+.favorite-header h1 {
+    margin: 0 0 8px;
+    font-size: clamp(2rem, 2.5vw, 2.6rem);
+    line-height: 1.05;
+    font-weight: 600;
+    color: #111827;
+}
+
+.favorite-header p {
+    margin: 0;
+    color: #111827;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.favorite-description {
+    margin-top: 16px;
+    max-width: 1040px;
+    color: #4b5563;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.favorite-list {
+    width: min(100%, 1136px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.favorite-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 32px 36px;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 24px;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.favorite-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.12);
+}
+
+.favorite-card h2 {
+    margin: 0 0 10px;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.favorite-card p {
+    margin: 0;
+    color: #374151;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    max-width: 980px;
+}
+
+.favorite-card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background: transparent;
+    color: #111827;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 0;
+}
+
+@media (max-width: 900px) {
+    .favorite-page {
+        padding: 30px 20px 48px;
+    }
+
+    .favorite-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+    }
+
+    .favorite-card-icon {
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 620px) {
+    .favorite-page {
+        padding: 24px 16px 40px;
+    }
+
+    .favorite-card {
+        gap: 18px;
+    }
+}

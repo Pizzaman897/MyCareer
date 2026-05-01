@@ -35,6 +35,15 @@ $router->add('GET', '/interests5', 'InterestController5', 'index5');
 //Home page
 $router->add('GET', '/home', 'HomeController', 'home');
 
+//Mail page
+$router->add('GET', '/mail', 'MailController', 'mail');
+
+//About page
+$router->add('GET', '/about', 'MailController', 'about');
+
+//Favorite page
+$router->add('GET', '/favorite', 'MailController', 'favorite');
+
 //Rekomendasi karir
 $router->add('GET', '/recommendations', 'RecommendationController', 'recommendations');
 

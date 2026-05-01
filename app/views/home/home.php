@@ -58,3 +58,6 @@
    <footer>
         <?php require_once '../app/views/component/Footer.php'; ?>
     </footer>
+
+</body>
+</html>

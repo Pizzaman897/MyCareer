@@ -11,15 +11,9 @@
         <?php require_once '../app/views/component/Header.php'; ?>
     </header>
 
-    <main class="landing-hero">
-        <div class="landing-hero-content">
-            <h1>Find Your Passion, Determine Your Future</h1>
-            <p>An interest and career path exploration platform to help students identify their potential and plan their future more purposefully.</p>
-            <a class="landing-hero-cta" href="/signin">START</a>
-        </div>
-
-        <div class="landing-hero-image">
-            <img src="/asset/Landing-Page-Picture.png" alt="Students planning their future">
+    <main class="landing-empty">
+        <div class="landing-ellipse">
+            <img src="/asset/Ellipse 11.png" alt="Landing background ellipse">
         </div>
     </main>
 </body>
