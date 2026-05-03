@@ -47,6 +47,9 @@ $router->add('GET', '/favorite', 'MailController', 'favorite');
 //Rekomendasi karir
 $router->add('GET', '/recommendations', 'RecommendationController', 'recommendations');
 
+// Help Center page
+$router->add('GET', '/help', 'HelpController', 'help');
+
 $router->run();
 
 ?>
