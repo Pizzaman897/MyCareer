@@ -48,7 +48,13 @@ $router->add('GET', '/favorite', 'MailController', 'favorite');
 $router->add('GET', '/recommendations', 'RecommendationController', 'recommendations');
 
 // Help Center page
-$router->add('GET', '/help', 'HelpController', 'help');
+$router->add('GET', '/help', 'CustomerSupportController', 'help');
+
+// FAQ page
+$router->add('GET', '/faq', 'CustomerSupportController', 'faq');
+
+// Contact page
+$router->add('GET', '/contact', 'CustomerSupportController', 'contact');
 
 $router->run();
 
