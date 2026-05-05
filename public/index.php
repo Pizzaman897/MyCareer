@@ -56,6 +56,12 @@ $router->add('GET', '/faq', 'CustomerSupportController', 'faq');
 // Contact page
 $router->add('GET', '/contact', 'CustomerSupportController', 'contact');
 
+// Privacy Policy page
+$router->add('GET', '/privacy', 'LegalController', 'privacypolicy');    
+
+// Terms of Service page
+$router->add('GET', '/terms', 'LegalController', 'termsofservice');
+
 $router->run();
 
 ?>
