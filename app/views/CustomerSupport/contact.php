@@ -54,7 +54,8 @@
                 <p>Sunday: Closed</p>
             </article>
         </section>
-
+         </main>
+         <main class="contact-form">
         <section class="contact-form-section">
             <div class="contact-form-panel">
                 <h2>Send Us a Message</h2>
@@ -72,10 +73,10 @@
                 </form>
             </div>
             <div class="contact-image-panel">
-                <img src="/asset/lewisnelpon.png" alt="Contact illustration">
+            <img src="/asset/lewisnelpon.png" alt="Contact illustration">
             </div>
         </section>
-
+        </main> 
         <section class="contact-thanks">
             <div class="contact-thanks-overlay"></div>
             <div class="contact-thanks-content">
@@ -83,7 +84,7 @@
                 <p>We appreciate your message and will respond shortly. Your questions and feedback mean a lot to us.</p>
             </div>
         </section>
-    </main>
+   
 
     <footer>
         <?php require_once __DIR__ . '/../component/Footer.php'; ?>
