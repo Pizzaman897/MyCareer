@@ -41,7 +41,7 @@
     </div>
 
     <div class="mycareer-footer__credits">
-        Dibuat dan dikembangkan di Jakarta, Indonesia Hak Cipta Dilindungi 2015 - 2026 PT Manual Muda Indonesia ©
+        © 2026 MyCareer. All rights reserved.
     </div>
 </footer>
 

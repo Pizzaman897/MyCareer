@@ -69,45 +69,8 @@
         </div>
     </main>
 
-    <footer class="faq-footer">
-        <div class="faq-footer-grid">
-            <div class="faq-footer-col">
-                <h4>Company</h4>
-                <a href="/about">About Us</a>
-                <a href="/mail">Mail</a>
-                <a href="/favorite">Favorite</a>
-            </div>
-            <div class="faq-footer-col">
-                <h4>Customer Support</h4>
-                <a href="/help">Help Center</a>
-                <a href="/faq">FAQ</a>
-                <a href="/contact">Contact Us</a>
-            </div>
-            <div class="faq-footer-col">
-                <h4>Legal</h4>
-                <a href="/privacy">Privacy Policy</a>
-                <a href="/terms">Terms of Service</a>
-                <a href="/cookies">Cookies Policy</a>
-            </div>
-            <div class="faq-footer-col social-col">
-                <h4>Follow Us :</h4>
-                <div class="social-links">
-                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/330px-Instagram_logo_2022.svg.png" alt="Instagram">
-                    </a>
-                    <a href="https://www.x.com" target="_blank" rel="noopener noreferrer" aria-label="X">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/X_logo_2023_%28white%29.png/960px-X_logo_2023_%28white%29.png?_=20230728230735" alt="X">
-                    </a>
-                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Facebook_logo_%28square%29.png" alt="Facebook">
-                    </a>
-                    <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1280px-YouTube_full-color_icon_%282017%29.svg.png?_=20240107144800" alt="YouTube">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="faq-footer-copy">© 2025 MovieStream. All rights reserved.</div>
+    <footer>
+        <?php require_once __DIR__ . '/../component/Footer.php'; ?>
     </footer>
 </body>
 </html>
