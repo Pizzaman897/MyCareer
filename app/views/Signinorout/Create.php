@@ -68,7 +68,7 @@ $message = $message ?? '';
                 </a>
             </div>
 
-            <p class="bottom-note">Have an account? <a href="/signin">Sign in</a></p>
+            <p class="bottom-note">Have san account? <a href="/signin">Sign in</a></p>
         </section>
     </main>
 
