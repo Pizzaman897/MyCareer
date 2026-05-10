@@ -1,7 +1,10 @@
-# Fix Customer Support Directory Issue
+# TODO
 
-## Steps:
-- [x] 1. Rename directory app/views/Customer Support → app/views/CustomerSupport
-- [x] 2. Update app/controllers/CustomerSupportController.php view paths
-- [ ] 3. Test routes /help, /faq, /contact
-- [ ] 4. Mark complete
+## Router /form fix
+- [x] Update `app/controllers/InterestController.php` to include a `form()` action that renders `interests.form`
+- [x] (Optional) Keep/adjust `index()` to avoid broken calls; ensure consistency with existing route usage
+- [x] Verify `public/index.php` route `/form` points to the correct controller method
+- [ ] Quick test: open `/form` in browser and confirm correct page renders
+
+
+

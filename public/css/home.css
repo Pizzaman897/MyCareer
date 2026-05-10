@@ -5,124 +5,266 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background-color: #ffffff;
-  color: #333333;
-  line-height: 1.5;
+  color: #111;
+  min-height: 100vh;
 }
 
-.kartu-profil {
-  max-width: 840px;
-  margin: 26px auto 14px;
-  border-radius: 16px;
-  background: linear-gradient(120deg, #2b2b2b 0%, #1b1b1b 100%);
-  color: #ffffff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  padding: 20px 24px;
-}
-
-.profil-card {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.profile-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background-color: #333;
-  border: 3px solid rgba(255, 255, 255, 0.25);
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.profile-image img {
+.home-page {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  padding-top: 20px;
 }
 
-.profile-info h2 {
-  font-size: 29px;
+.page-shell {
+  width: 100%;
+  background: #ffffff;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+  box-shadow: 0 44px 100px rgba(0, 0, 0, 0.18);
+}
+
+.page-shell-inner {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 40px 28px 80px;
+}
+
+.profile-section {
+  margin-bottom: 40px;
+}
+
+.profile-card-shell {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.profile-card-image {
+  border-radius: 28px;
+  overflow: hidden;
+  background: #f4f4f4;
+  border: 1px solid rgba(17, 25, 39, 0.08);
+}
+
+.profile-card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.profile-card-details h1 {
+  font-size: 36px;
+  margin-bottom: 28px;
+  letter-spacing: -0.03em;
+}
+
+.profile-field {
+  margin-bottom: 18px;
+}
+
+.profile-field label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #222222;
   margin-bottom: 8px;
 }
 
-.profile-info p {
-  font-size: 16px;
-  margin: 4px 0;
-  color: #ebebeb;
+.profile-field div {
+  background: #f5f5f5;
+  border-radius: 16px;
+  padding: 16px 18px;
+  color: #333333;
+  font-size: 15px;
+  border: 1px solid #ececec;
 }
 
-.profile-info p strong {
-  color: #ffffff;
+.recommendations-section {
+  margin-bottom: 40px;
 }
 
-.bagian-minat {
-  max-width: 840px;
-  margin: 26px auto 14px;
-  padding: 0 16px;
-}
-
-.bagian-minat h3 {
-  font-size: 26px;
-  margin-bottom: 6px;
-  color: #121212;
-}
-
-.bagian-minat p {
-  margin-bottom: 12px;
-  color: #444;
-}
-
-.item-minat {
-  background: linear-gradient(140deg, #2b2b2b 0%, #212121 100%);
-  border-radius: 14px;
-  padding: 15px 18px;
-  margin-bottom: 12px;
+.recommendations-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: white;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  gap: 24px;
+  margin-bottom: 18px;
 }
 
-.item-minat:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+.recommendations-header h2 {
+  font-size: 32px;
+  margin-bottom: 8px;
 }
 
-.item-minat span {
-  font-size: 20px;
+.recommendations-header p {
+  font-size: 16px;
+  color: #555;
+  margin: 0;
 }
 
-.panah {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.22);
-  color: #f4f4f4;
+.recommendation-intro {
+  margin-bottom: 28px;
+  color: #4a4a4a;
+  line-height: 1.8;
+  max-width: 860px;
+}
+
+.recommendations-list {
+  display: grid;
+  gap: 18px;
+}
+
+.recommendation-card {
+  background: #f8f9fb;
+  border-radius: 24px;
+  border: 1px solid rgba(17, 25, 39, 0.08);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.recommendation-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.12);
+}
+
+.card-toggle {
+  width: 100%;
+  text-align: left;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 16px;
+  border: none;
+  background: transparent;
+  padding: 24px 24px 12px;
   font-size: 20px;
-}
-
-.lihat-lebih {
-  max-width: 840px;
-  margin: 0 auto 20px;
-  padding: 0 16px;
-  text-align: right;
-}
-
-.lihat-lebih a {
+  font-weight: 700;
   color: #111;
-  font-size: 14px;
-  text-decoration: none;
-  font-weight: 600;
+  cursor: pointer;
 }
 
-.lihat-lebih a:hover {
+.toggle-icon {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #d2dce9;
+  color: #1f2937;
+  transition: transform 0.25s ease;
+}
+
+.recommendation-card.expanded .toggle-icon {
+  transform: rotate(90deg);
+}
+
+.card-summary {
+  padding: 0 24px 18px;
+  margin: 0;
+  color: #515151;
+  line-height: 1.75;
+  font-size: 15px;
+}
+
+.card-details {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 24px;
+  transition: max-height 0.28s ease, padding 0.28s ease;
+}
+
+.recommendation-card.expanded .card-details {
+  max-height: 360px;
+  padding: 0 24px 22px;
+}
+
+.card-details p {
+  margin-bottom: 18px;
+  color: #444;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.favorite-button {
+  border: none;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.favorite-button:hover {
+  transform: translateY(-1px);
+  background: #272727;
+}
+
+.favorite-button.active {
+  background: #1a73e8;
+}
+
+.see-more-link {
+  text-align: right;
+  margin-top: 16px;
+}
+
+.see-more-link a {
+  color: #111;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.see-more-link a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 980px) {
+  .profile-card-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .page-shell-inner {
+    padding: 32px 20px 64px;
+  }
+
+  .profile-card-details h1 {
+    font-size: 28px;
+  }
+
+  .card-toggle {
+    padding: 20px 20px 10px;
+    font-size: 18px;
+  }
+
+  .card-summary,
+  .card-details p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 620px) {
+  .page-shell {
+    border-bottom-left-radius: 48px;
+    border-bottom-right-radius: 48px;
+  }
+
+  .recommendations-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .toggle-icon {
+    width: 38px;
+    height: 38px;
+  }
 }

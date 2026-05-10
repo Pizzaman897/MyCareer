@@ -29,7 +29,7 @@
 
         <section class="about-dark">
             <div class="about-dark__top">
-                <div class="about-left-panel">
+                <!-- baris 1 -->
                     <div class="missionvision-card">
                         <div class="mission-section">
                             <h2>Our Mission</h2>
@@ -41,7 +41,7 @@
                             <p>We envision a future where every student has a clear understanding of their potential and a well-planned path toward their dream career.</p>
                         </div>
                     </div>
-
+                <div class="about-left-panel">
                     <div class="about-card about-card--whatwedo">
                         <div class="whatwedo-text">
                             <h2>What We Do</h2>
@@ -54,10 +54,9 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-
-                <div class="about-illustration">
+                    <div class="about-illustration">
                     <img src="/asset/ewashow.png" alt="Career guidance illustration">
+                </div>
                 </div>
             </div>
         </section>

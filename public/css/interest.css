@@ -1,242 +1,223 @@
-:root {
-            --bg: #ececec;
-            --card: #ffffff;
-            --text: #1f2937;
-            --muted: #6b7280;
-            --button: #363636;
-            --button-text: #ffffff;
-            --radius: 16px;
-            --shadow: 0 20px 40px rgba(0,0,0,0.12);
-            --font: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        }
+﻿:root {
+    --bg: #ffffff;
+    --card: #ffffff;
+    --text: #101828;
+    --muted: #667085;
+    --border: #d8e2ef;
+    --input: #fbfcfe;
+    --button: #111827;
+    --button-hover: #323232;
+    --shadow: 0 28px 70px rgba(15, 23, 42, 0.12);
+    --font: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
 
-        * {
-            box-sizing: border-box;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        /* HEADER FULL WIDTH */
-        header {
-            width: 100%;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
 
-        body {
-            margin: 0;
-            font-family: var(--font);
-            background: radial-gradient(circle at 10% 10%, #f7f8fc 0%, #e2e4e9 35%, #c7ccd8 100%);
-            color: var(--text);
-            min-height: 100vh;
-            padding: 0; /* HAPUS PADDING YANG NGEBATASIN HEADER */
-        }
+body {
+    font-family: var(--font);
+    background: #0a0a0a;
+    color: var(--text);
+}
 
-        .page-wrap {
-            width: 100%;
-            max-width: 520px;
-            margin: 0 auto;
-            padding: 20px 16px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: transparent;
+}
 
-        main.interests-card {
-            width: 100%;
-            background: #ffffff;
-            border-radius: 22px;
-            box-shadow: var(--shadow);
-            padding: 32px 24px 32px 24px;
-            border: 1px solid rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            position: relative;
-            margin-top: 20px;
-        }
+.page-wrap {
+    width: 100%;
+}
 
-        .header-bar {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            margin-bottom: 8px;
-            padding: 0 4px;
-        }
+.card-shell {
+    width: 100%;
+    background: var(--card);
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    box-shadow: var(--shadow);
+}
 
-        .back-link {
-            position: absolute;
-            left: 0;
-            text-decoration: none;
-            color: #232f3f;
-            font-size: 20px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            background: #f3f4f6;
-            border-radius: 50%;
-            border: 1px solid #dbe3eb;
-            transition: all 0.2s ease;
-        }
+.card-shell-inner {
+    width: min(980px, 100%);
+    margin: 0 auto;
+    padding: 42px 44px 80px;
+}
 
-        .back-link:hover {
-            background: #e5e7eb;
-            transform: translateX(-2px);
-        }
+main.interests-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
 
-        .progress-dots {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(255,255,255,0.9);
-            padding: 8px 12px;
-            border-radius: 20px;
-            border: 1px solid rgba(0,0,0,0.08);
-            backdrop-filter: blur(10px);
-        }
+.card-header h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2.2rem, 2.5vw, 3rem);
+    line-height: 1.02;
+}
 
-        .progress-dots span {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            display: inline-block;
-            background: #d1d5db;
-            transition: all 0.3s ease;
-        }
+.card-header .lead {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.75;
+    max-width: 720px;
+}
 
-        .progress-dots .active { 
-            background: #111827 !important; 
-            width: 12px; 
-            height: 12px;
-            box-shadow: 0 2px 8px rgba(17, 24, 39, 0.3);
-        }
+.form-message {
+    padding: 18px 22px;
+    border-radius: 24px;
+    background: #ecfdf3;
+    color: #0f766e;
+    border: 1px solid #bbf7d0;
+    font-weight: 600;
+}
 
-        .content-section {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            text-align: center;
-        }
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
 
-        h1 {
-            margin: 0;
-            font-size: 2rem;
-            line-height: 1.2;
-            font-weight: 700;
-        }
+.form-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 28px;
+    align-items: start;
+}
 
-        p.lead {
-            margin: 0;
-            color: var(--muted);
-            font-size: 16px;
-            line-height: 1.6;
-        }
+.form-fields {
+    display: grid;
+    gap: 22px;
+}
 
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+.form-group {
+    display: grid;
+    gap: 10px;
+}
 
-        input[type="date"], button.submit {
-            width: 100%;
-        }
+.form-group label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+}
 
-        input[type="date"] {
-            border: 2px solid #e5e7eb;
-            border-radius: 16px;
-            padding: 16px 20px;
-            font-size: 18px;
-            font-family: inherit;
-            outline: none;
-            background: #fff;
-            color: #111827;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
+.form-group input,
+.form-group select {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--input);
+    color: var(--text);
+    padding: 16px 18px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
 
-        input[type="date"]:focus {
-            border-color: #6366f1;
-            box-shadow: 0 0 0 4px rgba(99,102,241,0.15);
-            transform: translateY(-1px);
-        }
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
+}
 
-        input[type="date"]::-webkit-calendar-picker-indicator {
-            cursor: pointer;
-            opacity: 0.7;
-        }
+.form-group select {
+    appearance: none;
+}
 
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-        }
+.gender-other-row {
+    display: none;
+}
 
-        button.submit {
-            border: 0;
-            border-radius: 16px;
-            padding: 16px 24px;
-            background: var(--button);
-            color: var(--button-text);
-            font-weight: 700;
-            letter-spacing: 0.02em;
-            cursor: pointer;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(54, 54, 54, 0.3);
-        }
+select[multiple] {
+    min-height: 260px;
+    padding: 14px 16px;
+    background: var(--input);
+}
 
-        button.submit:hover {
-            background: #1c1c1c;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(54, 54, 54, 0.4);
-        }
+.select-help {
+    margin: 8px 0 0;
+    font-size: 0.88rem;
+    color: var(--muted);
+}
 
-        .terms {
-            font-size: 13px;
-            color: #6b7280;
-            line-height: 1.5;
-            text-align: center;
-        }
+.photo-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 32px 20px;
+    border-radius: 32px;
+    
+}
 
-        .terms a {
-            color: #111827;
-            text-decoration: underline;
-            font-weight: 500;
-        }
+.photo-circle {
+    width: 178px;
+    height: 178px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #ffffff 0%, #eef2f7 100%);
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+}
 
-        #result {
-            display: none !important;
-        }
+.camera-icon {
+    font-size: 3rem;
+}
 
-        @media (max-width: 640px) {
-            main.interests-card { 
-                padding: 28px 20px;
-                margin-top: 10px;
-            }
-            
-            h1 {
-                font-size: 1.75rem;
-            }
-            
-            .progress-dots {
-                padding: 6px 10px;
-                gap: 4px;
-            }
-            
-            .progress-dots span {
-                width: 8px;
-                height: 8px;
-            }
-            
-            .progress-dots .active {
-                width: 10px;
-                height: 10px;
-            }
-        }
+.photo-label {
+    margin: 0;
+    font-weight: 700;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: center;
+}
+
+button.submit {
+    width: 260px;
+    border: none;
+    border-radius: 999px;
+    padding: 18px 24px;
+    background: var(--button);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+button.submit:hover {
+    background: var(--button-hover);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .card-shell-inner {
+        padding: 32px 20px 64px;
+    }
+
+    select[multiple] {
+        min-height: 220px;
+    }
+
+    button.submit {
+        width: 100%;
+    }
+}

@@ -1,18 +1,21 @@
-        const continueBtn = document.getElementById('continueBtn');
-        const birthdayInput = document.getElementById('birthday');
-        const result = document.getElementById('result');
+document.addEventListener('DOMContentLoaded', function () {
+    const genderSelect = document.getElementById('gender');
+    const genderOtherRow = document.getElementById('genderOtherRow');
 
-        continueBtn.addEventListener('click', function () {
-            if (!birthdayInput.value) {
-                result.style.display = 'block';
-                result.style.color = '#dc2626';
-                result.textContent = 'Please select your birthday to continue.';
-                return;
-            }
-            result.style.display = 'block';
-            result.style.color = '#065f46';
-            result.textContent = 'Great! Redirecting to next step...';
-            setTimeout(() => {
-                window.location.href = '/interests2';
-            }, 400);
-        });
+    function toggleGenderOther() {
+        if (!genderSelect || !genderOtherRow) {
+            return;
+        }
+
+        if (genderSelect.value === 'other') {
+            genderOtherRow.style.display = 'block';
+        } else {
+            genderOtherRow.style.display = 'none';
+        }
+    }
+
+    if (genderSelect) {
+        genderSelect.addEventListener('change', toggleGenderOther);
+        toggleGenderOther();
+    }
+});
