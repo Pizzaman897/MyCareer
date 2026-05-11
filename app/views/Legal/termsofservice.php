@@ -13,18 +13,22 @@
 
     <main class="terms-page">
         <div class="content-box">
-            <div class="support-label">SUPPORT</div>
+            <div class="support-label"><b>SUPPORT</b></div>
+
             <h1>Career<br>Terms of Service</h1>
+            
             <p class="updated">Last updated: 1 Mei 2026</p>
             <hr>
 
             <section>
-                <p class="intro">Please read these terms carefully. By accessing or using our platform, you agree to be bound by these Terms of Service.</p>
+                <h3>Please Read These Terms Carefully</h3>
+                <p class="intro">By accessing or using our platform, you agree to be bound by these Terms of Service.</p>
             </section>
 
             <section>
                 <h2>1. Acceptance of Terms</h2>
-                <p>By creating an account or using our services, you agree to comply with these Terms. If you do not agree, please do not use the platform.</p>
+                <p>By creating an account or using our services,z\
+                     you agree to comply with these Terms. If you do not agree, please do not use the platform.</p>
             </section>
 
             <section>

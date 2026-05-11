@@ -51,6 +51,9 @@ $router->add('GET', '/privacy', 'LegalController', 'privacypolicy');
 // Terms of Service page
 $router->add('GET', '/terms', 'LegalController', 'termsofservice');
 
+// Cookies Policy page
+$router->add('GET', '/cookies', 'LegalController', 'cookiespolicy');
+
 $router->run();
 
 ?>

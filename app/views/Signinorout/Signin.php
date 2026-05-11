@@ -14,6 +14,9 @@ $message = $message ?? '';
     <link rel="stylesheet" href="/css/signin.css">
 </head>
 <body>
+    <header>
+        <?php require_once '../app/views/component/Header.php'; ?>
+    </header>
     <main class="signin-page">
         <section class="signin-card">
             <?php if (!empty($message)): ?>
@@ -25,22 +28,16 @@ $message = $message ?? '';
             <form class="signin-form" action="/signin" method="post">
                 <input type="hidden" name="slot" value="<?= htmlspecialchars($slot) ?>">
 
-                <label class="field">
-                    <span>Email atau nomor telepon</span>
-                    <input type="text" name="email" placeholder="Email atau nomor telepon" value="<?= htmlspecialchars($email) ?>" autocomplete="username">
-                </label>
+                <input type="text" class="form-input" name="email" placeholder="Email atau nomor telepon" value="<?= htmlspecialchars($email) ?>" autocomplete="username">
 
-                <label class="field">
-                    <span>Password</span>
-                    <input type="password" name="password" placeholder="Password" value="<?= htmlspecialchars($password) ?>" autocomplete="current-password">
-                </label>
+                <input type="password" class="form-input" name="password" placeholder="Password" value="<?= htmlspecialchars($password) ?>" autocomplete="current-password">
 
                 <div class="form-row">
                     <label class="checkbox-group">
                         <input type="checkbox" name="remember" <?= $remember ?>>
                         Remember me
                     </label>
-                    <a href="#">Forgot password?</a>
+                    <a href="#" class="forgot-password">Forgot password?</a>
                 </div>
 
                 <button type="submit" class="cta-button">Continue</button>
@@ -49,13 +46,11 @@ $message = $message ?? '';
             <div class="divider">Or</div>
 
             <div class="social-buttons">
-                <a href="#" class="social-button">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Google_Favicon_2025.svg/960px-Google_Favicon_2025.svg.png" alt="Google logo">
-                    Continue with Google
+                <a href="#" class="social-icon" aria-label="Continue with Google">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Google_Favicon_2025.svg/960px-Google_Favicon_2025.svg.png" alt="Google">
                 </a>
-                <a href="#" class="social-button">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Facebook_logo_%28square%29.png" alt="Facebook logo">
-                    Continue with Facebook
+                <a href="#" class="social-icon" aria-label="Continue with Facebook">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Facebook_logo_%28square%29.png" alt="Facebook">
                 </a>
             </div>
 
@@ -64,7 +59,7 @@ $message = $message ?? '';
 
         <aside class="side-panel">
             <div class="side-image">
-                <img src="/asset/signin.png" alt="Sign in illustration">
+                <img src="/asset/Foto Signin.png" alt="Sign in illustration">
             </div>
         </aside>
     </main>
