@@ -9,7 +9,7 @@ body {
     color: #111;
 }
 
-.privacy-policy-page {
+.cookies-policy-page {
     min-height: 100vh;
     padding: 60px 20px;
     background: #FFFFFF;
@@ -17,7 +17,7 @@ body {
     border-bottom-right-radius: 99px;
 }
 
-.privacy-container {
+.cookies-container {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 40px;
@@ -32,7 +32,7 @@ body {
     text-transform: uppercase;
 }
 
-.privacy-policy-page h1 {
+.cookies-policy-page h1 {
     font-size: 45px;
     font-weight: 700;
     line-height: 1.1;
@@ -54,11 +54,11 @@ body {
     border-radius: 10px;
 }
 
-.privacy-section {
+.cookies-section {
     margin-bottom: 32px;
 }
 
-.privacy-section h2 {
+.cookies-section h2 {
     font-size: 21px;
     font-weight: 600;
     color: #1E1F35;
@@ -66,7 +66,7 @@ body {
     line-height: 1.4;
 }
 
-.privacy-section h3 {
+.cookies-section h3 {
     font-size: 18px;
     font-weight: 600;
     color: #1E1F35;
@@ -74,19 +74,19 @@ body {
     line-height: 1.4;
 }
 
-.privacy-section p {
+.cookies-section p {
     font-size: 15px;
     line-height: 1.6;
     color: #44476C;
     margin: 0 0 12px;
 }
 
-.privacy-section ul {
+.cookies-section ul {
     margin: 12px 0;
     padding-left: 20px;
 }
 
-.privacy-section ul li {
+.cookies-section ul li {
     font-size: 15px;
     line-height: 1.6;
     color: #44476C;
@@ -103,24 +103,24 @@ header {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .privacy-container {
+    .cookies-container {
         padding: 0 20px;
     }
 
-    .privacy-policy-page h1 {
+    .cookies-policy-page h1 {
         font-size: 32px;
     }
 
-    .privacy-section h2 {
+    .cookies-section h2 {
         font-size: 19px;
     }
 
-    .privacy-section h3 {
+    .cookies-section h3 {
         font-size: 16px;
     }
 
-    .privacy-section p,
-    .privacy-section ul li {
+    .cookies-section p,
+    .cookies-section ul li {
         font-size: 14px;
     }
 }

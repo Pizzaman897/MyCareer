@@ -14,4 +14,9 @@ class LegalController extends Controller
     {
         $this->view('Legal.termsofservice');
     }
+
+    public function cookiespolicy()
+    {
+        $this->view('Legal.cookiespolicy');
+    }
 }

@@ -6,7 +6,7 @@ body {
     margin: 0;
     min-height: 100vh;
     font-family: 'Inter', sans-serif;
-    background: #F5F6FA;
+    background: #000000;
     color: #111;
 }
 
@@ -17,6 +17,10 @@ body {
     gap: 40px;
     align-items: center;
     padding: 40px;
+     border-bottom-left-radius: 99px;
+    border-bottom-right-radius: 99px;
+    background: #ffffff;
+    
 }
 
 .create-card {
@@ -27,39 +31,32 @@ body {
 }
 
 .create-card h1 {
-    margin: 0 0 28px;
+    margin-left: 80px;
     font-size: 2.8rem;
     letter-spacing: -0.04em;
 }
 
-.field {
-    display: block;
-    width: 100%;
-    margin-bottom: 18px;
-}
-
-.field label {
-    font-size: 0.85rem;
-    color: #5E6278;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.field input {
+.form-input {
     width: 100%;
     border: 1px solid #D8D8E6;
     border-radius: 18px;
     padding: 16px 18px;
-    background: #F8F9FF;
+    background: #fff;
     color: #1E1F35;
     font-size: 0.95rem;
     transition: border-color 0.2s ease;
+    margin-bottom: 18px;
+    font-family: 'Inter', sans-serif;
 }
 
-.field input:focus {
+.form-input::placeholder {
+    color: #9CA3AF;
+}
+
+.form-input:focus {
     outline: none;
-    border-color: #5D4CDB;
-    box-shadow: 0 0 0 4px rgba(93, 76, 219, 0.08);
+    border-color: #D8D8E6;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
 }
 
 .cta-button {
@@ -98,33 +95,36 @@ body {
 }
 
 .social-buttons {
-    display: grid;
-    gap: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
     margin-bottom: 24px;
 }
 
-.social-button {
+.social-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    padding: 14px 16px;
+    width: 48px;
+    height: 48px;
     border: 1px solid #D8D8E6;
-    border-radius: 18px;
+    border-radius: 50%;
     background: #fff;
-    color: #252A40;
-    font-weight: 600;
     cursor: pointer;
+    transition: all 0.2s ease;
     text-decoration: none;
 }
 
-.social-button:hover {
+.social-icon:hover {
     border-color: #B3B8D6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.social-button img {
-    width: 20px;
-    height: 20px;
+.social-icon img {
+    width: 24px;
+    height: 24px;
+    display: block;
 }
 
 .bottom-note {
@@ -169,6 +169,8 @@ body {
     border: 1px solid rgba(93, 76, 219, 0.18);
     font-size: 0.96rem;
 }
+
+
 
 @media (max-width: 960px) {
     .create-page {

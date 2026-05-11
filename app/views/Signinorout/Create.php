@@ -15,10 +15,13 @@ $message = $message ?? '';
     <link rel="stylesheet" href="/css/create.css">
 </head>
 <body>
+    <header>
+        <?php require_once '../app/views/component/Header.php'; ?>
+    </header>
     <main class="create-page">
         <aside class="side-panel">
             <div class="side-image">
-                <img src="/asset/create.png" alt="Create account illustration">
+                <img src="/asset/Foto Create Account.png" alt="Create account illustration">
             </div>
         </aside>
 
@@ -32,25 +35,13 @@ $message = $message ?? '';
             <form class="create-form" action="/create" method="post">
                 <input type="hidden" name="slot" value="<?= htmlspecialchars($slot) ?>">
 
-                <label class="field">
-                    <span>Email or username</span>
-                    <input type="text" name="email" placeholder="Email or username" value="<?= htmlspecialchars($email) ?>" autocomplete="username">
-                </label>
+                <input type="text" class="form-input" name="email" placeholder="Email or username" value="<?= htmlspecialchars($email) ?>" autocomplete="username">
 
-                <label class="field">
-                    <span>Phone Number</span>
-                    <input type="tel" name="phone" placeholder="Phone Number" value="<?= htmlspecialchars($phone) ?>" autocomplete="tel">
-                </label>
+                <input type="tel" class="form-input" name="phone" placeholder="Phone Number" value="<?= htmlspecialchars($phone) ?>" autocomplete="tel">
 
-                <label class="field">
-                    <span>Password</span>
-                    <input type="password" name="password" placeholder="Password" value="<?= htmlspecialchars($password) ?>" autocomplete="new-password">
-                </label>
+                <input type="password" class="form-input" name="password" placeholder="Password" value="<?= htmlspecialchars($password) ?>" autocomplete="new-password">
 
-                <label class="field">
-                    <span>Confirm Password</span>
-                    <input type="password" name="confirm_password" placeholder="Confirm Password" value="<?= htmlspecialchars($confirm_password) ?>" autocomplete="new-password">
-                </label>
+                <input type="password" class="form-input" name="confirm_password" placeholder="Confirm Password" value="<?= htmlspecialchars($confirm_password) ?>" autocomplete="new-password">
 
                 <button type="submit" class="cta-button">Continue</button>
             </form>
@@ -58,20 +49,17 @@ $message = $message ?? '';
             <div class="divider">Or</div>
 
             <div class="social-buttons">
-                <a href="#" class="social-button">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Google_Favicon_2025.svg/960px-Google_Favicon_2025.svg.png" alt="Google logo">
-                    Continue with Google
+                <a href="#" class="social-icon" aria-label="Continue with Google">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Google_Favicon_2025.svg/960px-Google_Favicon_2025.svg.png" alt="Google">
                 </a>
-                <a href="#" class="social-button">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Facebook_logo_%28square%29.png" alt="Facebook logo">
-                    Continue with Facebook
+                <a href="#" class="social-icon" aria-label="Continue with Facebook">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Facebook_logo_%28square%29.png" alt="Facebook">
                 </a>
             </div>
 
             <p class="bottom-note">Have an account? <a href="/signin">Sign in</a></p>
         </section>
     </main>
-
     <script src="/js/create.js" defer></script>
 </body>
 </html>
