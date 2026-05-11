@@ -44,16 +44,7 @@
                 <h2>Popular Topics</h2>
             </div>
 
-            <!--
-                Grid layout (5 cols):
-                Col 1 → Saved Careers card
-                Col 2 → Career Recommendations card
-                Col 3 → Center image (character)
-                Col 4 → Portfolio & Profile card
-                Col 5 → Account & Security card
 
-                Getting Started card sits BELOW the image, centred
-            -->
             <div class="help-topics-grid">
 
                 <!-- Col 1: Saved Careers -->

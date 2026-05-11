@@ -16,7 +16,9 @@
 
     <main class="contact-page">
         <section class="contact-hero">
+            <div class="contact-badge-wrapper">
             <div class="contact-badge">Contact Us</div>
+            </div>
             <div class="contact-hero-copy">
                 <h1>Contact Us</h1>
                 <p class="contact-subtitle">We’d Love to Hear From You</p>
