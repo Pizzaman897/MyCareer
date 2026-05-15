@@ -26,11 +26,9 @@
                 </div>
 
                 <div class="hero-stack">
-                    <div class="hero-bg-ellipse">
-                        <img src="/asset/Ellipse 11.png" alt="Landing background ellipse">
-                    </div>
+
                     <div class="hero-image-frame">
-                        <img src="/asset/joey-mid.png" alt="Joey center hero image">
+                        <img src="/asset/joeypeganbola.png" alt="Joey center hero image">
                     </div>
                 </div>
 
