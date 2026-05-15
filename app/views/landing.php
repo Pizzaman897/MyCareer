@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <?php require_once '../app/views/component/Header.php'; ?>
+        <?php require_once '../app/views/Component/Header.php'; ?>
     </header>
 
     <main class="landing-page">
@@ -22,7 +22,7 @@
                     <p>
                         An interest and career path exploration platform to help students identify their potential and plan their future more purposefully.
                     </p>
-                    <a class="hero-button" href="/interests">Get Started Now</a>
+                    <a class="hero-button" href="Signinorout/Create.php">Get Started Now</a>
                 </div>
 
                 <div class="hero-stack">
