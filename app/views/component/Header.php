@@ -121,7 +121,7 @@ header.mycareer-header {
         </div>
 
         <a class="mycareer-header-brand" href="/landing">
-            <img src="/asset/Logo-removebg-preview%201.png" alt="MyCareer Logo">
+            <img src="/asset/Logo.png" alt="MyCareer Logo">
         </a>
 
         <div class="mycareer-header-links">

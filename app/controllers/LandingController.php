@@ -7,6 +7,6 @@ class LandingController extends Controller
 {
     public function landing()
     {
-        $this->view('landing');
+        $this->view('Landing.landing');
     }
 }
