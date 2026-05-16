@@ -15,34 +15,46 @@
         <div class="page-shell">
             <div class="page-shell-inner">
                 <section class="profile-section">
+
+                    <!-- JUDUL DIPISAH -->
+                    <div class="profile-title">
+                        <h1>Your Personal Career Profile</h1>
+                    </div>
+
+                    <!-- GRID BARU -->
                     <div class="profile-card-shell">
                         <div class="profile-card-image">
-                            <img src="/asset/jeoy.png" alt="Profile photo" />
+                            <img src="/asset/Home-1.png" alt="Profile photo" />
                         </div>
+
                         <div class="profile-card-details">
-                            <h1>Your Personal Career Profile</h1>
                             <div class="profile-field">
                                 <label>Full Name :</label>
                                 <div>Joey Jason Lee</div>
                             </div>
+
                             <div class="profile-field">
                                 <label>Class :</label>
                                 <div>XI TKJ 3</div>
                             </div>
+
                             <div class="profile-field">
                                 <label>School Name :</label>
                                 <div>SMK K IMMANUEL 1</div>
                             </div>
+
                             <div class="profile-field">
                                 <label>Gender :</label>
                                 <div>Male</div>
                             </div>
+
                             <div class="profile-field">
                                 <label>Tell us what you like :</label>
                                 <div>Photography</div>
                             </div>
                         </div>
                     </div>
+
                 </section>
 
                 <section class="recommendations-section">

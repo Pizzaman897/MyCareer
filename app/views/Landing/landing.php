@@ -26,7 +26,7 @@
                     potential and plan their future
                     more purposefully.
                     </p>
-                    <button>Get Started Now</button>
+                    <button onclick="window.location.href='register.php'">Get Started Now</button>
                 </div>
 
                 <!-- CENTER IMAGE -->
@@ -52,9 +52,7 @@
                     <h3>Empowering Students Through Smart Career Exploration</h3>
 
                     <img
-                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
-                    alt="team"
-                    >
+                    src="/asset/Landing-1.png"alt="team">
 
                     <p>
                     Our platform provides a structured and interactive
@@ -84,9 +82,7 @@
                     </p>
 
                     <img
-                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop"
-                    alt="man"
-                    >
+                    src="/asset/Landing-2.png"alt="man">
 
                 </div>
 
@@ -97,7 +93,7 @@
 
                 <div class="card">
                     <h2>Features Section</h2>
-                    <span>Our Core Features</span>
+                    <span><b>Our Core Features</b></span>
 
                     <div class="feature-box">1. Interest & Skill Tracker</div>
                     <div class="feature-box">2. Career Path Explorer</div>
@@ -141,7 +137,7 @@
             that match who you are.
             </p>
 
-            <button>Get Started Now</button>
+            <button onclick="window.location.href='register.php'">Get Started Now</button>
         </section>
 
     </main>
