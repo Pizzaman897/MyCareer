@@ -2,7 +2,7 @@
 namespace App\Core;
  
 use App\Controllers\StudentController;
-class Router //nama file harus sesuai dengan nama class
+class Router
 
 {
     private array $routes = [];
@@ -33,12 +33,9 @@ class Router //nama file harus sesuai dengan nama class
                 subject: $route['uri']
             );
             $pattern = '#^' . $pattern . '$#';
-            // /students/{id} -> #^/students/([0-9]+)$# = /stundents/
-
 
             if (preg_match($pattern, $uri, $matches) && $method  === $route['method']) {
                 array_shift($matches);
-
 
                 require_once '../app/controllers/' . $route['controller'] . '.php';
 

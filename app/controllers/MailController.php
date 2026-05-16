@@ -15,8 +15,8 @@ class MailController extends Controller
         $this->view('Company.favorite');
     }
 
-    public function about()
+    public function about_us()
     {
-        $this->view('Company.about');
+        $this->view('Company.about-us');
     }
 }

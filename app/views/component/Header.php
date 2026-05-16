@@ -9,7 +9,7 @@ header.mycareer-header {
     justify-content: center;
     padding: 24px 16px;
     background: #ffffff;
-    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .mycareer-header-bar {
@@ -117,7 +117,7 @@ header.mycareer-header {
     <div class="mycareer-header-bar">
         <div class="mycareer-header-links">
             <a href="/home">Home</a>
-            <a href="/about">About us</a>
+            <a href="/about-us">About us</a>
         </div>
 
         <a class="mycareer-header-brand" href="/landing">

@@ -13,7 +13,6 @@ body {
     background: #000000;
 }
 
-
 .mail-page {
     min-height: calc(100vh - 120px);
     padding: 32px 24px 40px;
@@ -24,6 +23,11 @@ body {
     border-radius: 0 0 72px 72px;
 }
 
+.mail-content{
+    width: 85%;
+    margin: auto;
+}
+
 @media (max-width: 760px) {
     .mail-page {
         padding: 20px 16px 28px;
@@ -31,7 +35,7 @@ body {
 }
 
 .mail-toolbar {
-    width: min(100%, 1088px);
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -84,7 +88,6 @@ body {
 }
 
 .mail-list {
-    width: min(100%, 1088px);
     display: flex;
     flex-direction: column;
     gap: 12px;

@@ -10,12 +10,12 @@ $router = new Router();
 $router->add('GET', '/landing', 'LandingController', 'landing');
 
 // Sign in page
-$router->add('GET', '/signin', 'SigninController', 'signin');
-$router->add('POST', '/signin', 'SigninController', 'authenticate');
+$router->add('GET', '/login', 'LoginController', 'login');
+$router->add('POST', '/login', 'LoginController', 'authenticate');
 
 // Create Account page
-$router->add('GET', '/create', 'CreateController', 'create');
-$router->add('POST', '/create', 'CreateController', 'store');
+$router->add('GET', '/register', 'RegisterController', 'register');
+$router->add('POST', '/register', 'RegisterController', 'store');
 
 // Daftar Minat dan Keterampilan
 $router->add('GET', '/form', 'InterestController', 'form');
@@ -28,7 +28,7 @@ $router->add('GET', '/home', 'HomeController', 'home');
 $router->add('GET', '/mail', 'MailController', 'mail');
 
 //About page
-$router->add('GET', '/about', 'MailController', 'about');
+$router->add('GET', '/about-us', 'MailController', 'about_us');
 
 //Favorite page
 $router->add('GET', '/favorite', 'MailController', 'favorite');

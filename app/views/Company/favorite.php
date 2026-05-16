@@ -12,6 +12,7 @@
     </header>
 
     <main class="favorite-page">
+        <div class="favorite-content">
         <section class="favorite-header">
             <h1>Your Saved Career Choices</h1>
             
@@ -27,6 +28,7 @@
                 <span class="favorite-card-icon">›</span>
             </article>
         </section>
+        </div>
     </main>
 
     <footer>

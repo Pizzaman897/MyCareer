@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ================= TOP SECTION ================= */
+.about-top {
+  background: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  border-bottom-left-radius: 120px;
+  border-bottom-right-radius: 120px;
+}
+
+.about-top h1 {
+  font-size: 52px;
+  font-weight: 800;
+  color: #000;
+}
+
+.about-top h3 {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+}
+
+.about-top .desc {
+  max-width: 900px;
+  margin: 20px auto 50px;
+  font-size: 22px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* TEAM */
+.team {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 80px; /* tambahin ini */
+}
+
+.member {
+  width: 220px;
+  height: 260px;
+  border-radius: 25px;
+  overflow: hidden;
+  background: #eee;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+.member img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member:hover {
+  transform: translateY(-5px) scale(1.03);
+}
+
+/* ================= MISSION ================= */
+.mission {
+  width: 85%;
+  margin: 70px auto;
+  padding: 50px;
+  background: #3d3d3d;
+  border-radius: 40px;
+}
+
+.mission h2 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.mission p {
+  font-size: 22px;
+  line-height: 1.6;
+  color: #ddd;
+  margin-bottom: 30px;
+}
+
+/* ================= WHAT WE DO ================= */
+.what-we-do {
+  width: 85%;
+  margin: 70px auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+}
+
+/* LEFT CARD (FEATURE STYLE) */
+.what-we-do .left {
+  flex: 1;
+  background: #3d3d3d;
+  padding: 50px;
+  border-radius: 40px;
+  margin-right: 40%;
+}
+
+.what-we-do .left h2 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.what-we-do .left p {
+  font-size: 22px;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+/* FEATURE BOX (SAMA LANDING) */
+.what-we-do .pill {
+  border: 2px solid #9f9f9f;
+  padding: 18px 25px;
+  border-radius: 20px;
+  margin-top: 20px;
+  font-size: 22px;
+  background: #5a5a5a;
+  transition: 0.3s;
+}
+
+.what-we-do .pill:hover {
+  background: #6b6b6b;
+  transform: translateY(-2px);
+}
+
+/* RIGHT IMAGE */
+.what-we-do .right {
+
+  display: flex;
+  justify-content: flex-end; /* dorong ke kanan */
+  position: absolute;
+  overflow: visible;
+  width: 45%;
+}
+
+.what-we-do .right img {
+  width: 600px ; /* BESARIN */
+  max-width: none;
+  transform: translateX(830px); /* dorong keluar ke kanan */
+  display: block;
+}
+
+/* ================= BOTTOM ================= */
+.bottom {
+  width: 85%;
+  margin: 70px auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.bottom div {
+  width: 48%;
+}
+
+.bottom h2 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.bottom p {
+  font-size: 22px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1200px) {
+
+  .team {
+    flex-wrap: wrap;
+  }
+
+  .what-we-do,
+  .bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bottom div {
+    width: 100%;
+  }
+
+  .what-we-do .right img {
+    width: 250px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .about-top {
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+  }
+
+  .about-top h1 {
+    font-size: 36px;
+  }
+
+  .about-top h3 {
+    font-size: 20px;
+  }
+
+  .about-top .desc,
+  .mission p,
+  .bottom p,
+  .what-we-do .left p,
+  .what-we-do .pill {
+    font-size: 16px;
+  }
+
+  .mission h2,
+  .bottom h2,
+  .what-we-do .left h2 {
+    font-size: 28px;
+  }
+}
