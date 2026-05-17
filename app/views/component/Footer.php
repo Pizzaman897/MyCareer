@@ -2,7 +2,7 @@
     <div class="mycareer-footer__columns">
         <div class="mycareer-footer__col">
             <h4>Company</h4>
-            <a href="/about">About Us</a>
+            <a href="/about-us">About Us</a>
             <a href="/mail">Mail</a>
             <a href="/favorite">Favorite</a>
         </div>

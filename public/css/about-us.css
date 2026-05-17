@@ -99,6 +99,7 @@ body {
   gap: 40px;
   align-items: center;
   position: relative;
+  margin-bottom: 150px;
 }
 
 /* LEFT CARD (FEATURE STYLE) */
@@ -167,6 +168,13 @@ body {
   width: 48%;
 }
 
+.goal {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
 .bottom h2 {
   font-size: 42px;
   margin-bottom: 10px;
@@ -192,7 +200,7 @@ body {
   }
 
   .bottom div {
-    width: 100%;
+    width: 48%;
   }
 
   .what-we-do .right img {
@@ -229,4 +237,5 @@ body {
   .what-we-do .left h2 {
     font-size: 28px;
   }
+
 }

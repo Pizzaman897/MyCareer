@@ -15,7 +15,7 @@ body {
 
 .mail-page {
     min-height: calc(100vh - 120px);
-    padding: 32px 24px 40px;
+    padding: 32px 0 40px; /* kiri kanan = 0 */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,7 +25,7 @@ body {
 
 .mail-content{
     width: 85%;
-    margin: auto;
+    margin: 0 auto;
 }
 
 @media (max-width: 760px) {

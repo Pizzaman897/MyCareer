@@ -17,10 +17,8 @@
             <h3>Empowering Students to Discover Their Future</h3>
 
             <p class="desc">
-                We are a digital platform designed to help students explore their interests, understand their skills,
-                and discover the right career path with confidence.
-                Many students struggle to choose a career because information is scattered and difficult to connect
-                with their personal strengths. Our platform solves this problem by providing a structured, easy-to-use system.
+                We are a digital platform designed to help students explore their interests, understand their skills, and discover the right career path with confidence.
+                Many students struggle to choose a career because information is scattered and difficult to connect with their personal strengths. Our platform solves this problem by providing a structured, easy-to-use system that brings everything together in one place.
             </p>
 
             <!-- TEAM -->
@@ -68,15 +66,15 @@
             <div class="why">
                 <h2>Why We Exist</h2>
                 <p>
-                    Students often feel confused when choosing a career due to lack of guidance.
-                    Our platform bridges this gap with a simple and interactive experience.
+                    Students often feel confused when choosing a career due to a lack of guidance and organized information. Schools need a system that helps students connect their personal interests with real career opportunities.
+                    Our platform bridges this gap by turning complex career information into a simple and interactive experience.
                 </p>
             </div>
 
             <div class="goal">
                 <h2>Our Goal</h2>
                 <p>
-                    To become a trusted platform that supports students in building their future step by step.
+                    To become a trusted platform that supports students in building their future—step by step, from self-discovery to career planning.
                 </p>
             </div>
         </section>
