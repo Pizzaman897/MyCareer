@@ -4,87 +4,130 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    background: #000;
     color: #111;
 }
 
+/* MAIN CONTAINER */
 .terms-page {
-    padding: 60px 20px;
+    min-height: 100vh;
+    padding: 80px 20px;
+    background: #FFFFFF;
+    border-bottom-left-radius: 120px;
+    border-bottom-right-radius: 120px;
 }
 
-.content-box {
-    max-width: 900px;
+.terms-container {
+    width: 85%;
     margin: 0 auto;
-    background: #fff;
-    padding: 0 40px;
-    border-bottom-left-radius: 99px;
-    border-bottom-right-radius: 99px;
-    
 }
 
+/* LABEL */
 .support-label {
-    font-size: 12px;
+    font-size: 20px;
+    font-weight: 700;
     letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #555;
+    color: #070b20;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
-.content-box h1 {
-    margin: 0 0 12px;
-    font-size: 45px;
+/* TITLE */
+.terms-page h1 {
+    font-size: 60px;
+    font-weight: 700;
     line-height: 1.1;
+    letter-spacing: -0.04em;
+    margin: 0 0 12px;
+    color: #1E1F35;
 }
 
-.updated {
+/* DATE */
+.last-updated {
+    font-size: 20px;
+    color: #5E6278;
     margin: 16px 0 24px;
-    color: #666;
-    font-size: 15px;
 }
 
-hr {
+/* DIVIDER */
+.divider {
     border: none;
     border-top: 8px solid #000000;
     margin: 32px 0;
     border-radius: 10px;
 }
 
-.content-box section {
-    margin-bottom: 22px;
+/* SECTION */
+.terms-section {
+    margin-bottom: 32px;
 }
 
-.content-box h2 {
-    margin: 0 0 8px;
-    font-size: 16px;
+/* SUBTITLE (H2) */
+.terms-section h2 {
+    font-size: 50px;
+    font-weight: 600;
+    color: #1E1F35;
+    margin: 0 0 12px;
+    line-height: 1.4;
 }
 
-.content-box p,
-.content-box li {
-    margin: 0 0 10px;
+/* SUBTITLE (H3) */
+.terms-section h3 {
+    font-size: 40px;
+    font-weight: 600;
+    color: #1E1F35;
+    margin: 0 0 12px;
+    line-height: 1.4;
+}
+
+/* PARAGRAPH */
+.terms-section p {
+    font-size: 20px;
     line-height: 1.6;
-    color: #444;
+    color: #44476C;
+    margin: 0 0 12px;
 }
 
-.content-box ul {
-    margin: 0 0 10px 20px;
-    padding: 0;
+/* LIST */
+.terms-section ul {
+    margin: 12px 0;
+    padding-left: 20px;
 }
 
+.terms-section ul li {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #44476C;
+    margin-bottom: 8px;
+}
+
+/* HEADER FIX */
+header {
+    background: #FFFFFF;
+    border-bottom: 1px solid #E0E0E8;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    .terms-page {
-        padding: 40px 16px;
-    }
-
-    .content-box {
+    .terms-container {
         padding: 0 20px;
     }
 
-    .content-box h1 {
+    .terms-page h1 {
         font-size: 32px;
     }
 
-    .content-box h2 {
-        font-size: 19px;
+    .terms-section h2 {
+        font-size: 20px;
+    }
+
+    .terms-section h3 {
+        font-size: 18px;
+    }
+
+    .terms-section p,
+    .terms-section ul li {
+        font-size: 14px;
     }
 }

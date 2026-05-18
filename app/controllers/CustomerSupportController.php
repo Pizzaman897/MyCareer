@@ -5,9 +5,9 @@ use App\Core\Controller;
 
 class CustomerSupportController extends Controller
 {
-    public function help()
+    public function help_center()
     {
-        $this->view('CustomerSupport/helpcenter');
+        $this->view('CustomerSupport/help-center');
     }
 
     public function faq()

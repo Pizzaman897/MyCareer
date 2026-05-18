@@ -33,7 +33,7 @@ body {
 
 .favorite-header h1 {
     margin: 0 0 8px;
-    font-size: clamp(2rem, 2.5vw, 2.6rem);
+    font-size: 60px;
     line-height: 1.05;
     font-weight: 600;
     color: #111827;
@@ -42,7 +42,7 @@ body {
 .favorite-header p {
     margin: 0;
     color: #111827;
-    font-size: 1rem;
+    font-size: 20px;
     font-weight: 500;
 }
 
@@ -82,9 +82,9 @@ body {
     border: none;
     background: transparent;
     padding: 24px 24px 12px;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
-    color: #111;
+    color: #000;
     cursor: pointer;
 }
 
@@ -107,9 +107,9 @@ body {
 .card-summary {
     padding: 0 24px 18px;
     margin: 0;
-    color: #515151;
+    color: #000;
     line-height: 1.75;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .card-details {
@@ -126,9 +126,9 @@ body {
 
 .card-details p {
     margin-bottom: 18px;
-    color: #444;
+    color: #000;
     line-height: 1.8;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .remove-button {

@@ -61,12 +61,11 @@
                     <div class="recommendations-header">
                         <div>
                             <h2>Career Recommendations</h2>
-                            <p>Your Personalized Career Path</p>
+                            <h3>Your Personalized Career Path</h3>
                         </div>
                     </div>
                     <p class="recommendation-intro">
-                        Based on your interests, skills, and preferences, we have identified career paths that match your profile. These
-                        recommendations are designed to help you explore opportunities that fit who you are.
+                        Based on your interests, skills, and preferences, we have identified career paths that match your profile. These recommendations are designed to help you explore opportunities that fit who you are.
                     </p>
 
                     <div class="recommendations-list">

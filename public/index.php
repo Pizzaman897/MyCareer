@@ -18,8 +18,8 @@ $router->add('GET', '/register', 'RegisterController', 'register');
 $router->add('POST', '/register', 'RegisterController', 'store');
 
 // Daftar Minat dan Keterampilan
-$router->add('GET', '/form', 'InterestController', 'form');
-$router->add('POST', '/form', 'InterestController', 'store');
+$router->add('GET', '/personal-information-form', 'InterestController', 'form');
+$router->add('POST', '/personal-information-form', 'InterestController', 'store');
 
 //Home page
 $router->add('GET', '/home', 'HomeController', 'home');
@@ -34,7 +34,7 @@ $router->add('GET', '/about-us', 'MailController', 'about_us');
 $router->add('GET', '/favorite', 'MailController', 'favorite');
 
 // Help Center page
-$router->add('GET', '/help', 'CustomerSupportController', 'help');
+$router->add('GET', '/help-center', 'CustomerSupportController', 'help_center');
 
 // FAQ page
 $router->add('GET', '/faq', 'CustomerSupportController', 'faq');
@@ -43,13 +43,13 @@ $router->add('GET', '/faq', 'CustomerSupportController', 'faq');
 $router->add('GET', '/contact', 'CustomerSupportController', 'contact');
 
 // Privacy Policy page
-$router->add('GET', '/privacy', 'LegalController', 'privacypolicy');    
+$router->add('GET', '/privacy-policy', 'LegalController', 'privacypolicy');    
 
 // Terms of Service page
-$router->add('GET', '/terms', 'LegalController', 'termsofservice');
+$router->add('GET', '/terms-of-service', 'LegalController', 'termsofservice');
 
 // Cookies Policy page
-$router->add('GET', '/cookies', 'LegalController', 'cookiespolicy');
+$router->add('GET', '/cookies-policy', 'LegalController', 'cookiespolicy');
 
 $router->run();
 

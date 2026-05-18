@@ -9,16 +9,16 @@
 
         <div class="mycareer-footer__col">
             <h4>Customer Support</h4>
-            <a href="/help">Help Center</a>
+            <a href="/help-center">Help Center</a>
             <a href="/faq">FAQ</a>
             <a href="/contact">Contact Us</a>
         </div>
 
         <div class="mycareer-footer__col">
             <h4>Legal</h4>
-            <a href="/privacy">Privacy Policy</a>
-            <a href="/terms">Terms of Service</a>
-            <a href="/cookies">Cookies Policy</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms-of-service">Terms of Service</a>
+            <a href="/cookies-policy">Cookies Policy</a>
         </div>
 
         <div class="mycareer-footer__col mycareer-footer__social">
@@ -50,7 +50,7 @@
     width: 100%;
     height: 380px;
     padding: 80px 64px;
-        background: #0a0a0a;
+    background: #0a0a0a;
 }
 
 .mycareer-footer__columns {
@@ -69,7 +69,7 @@
 
 .mycareer-footer__col h4 {
     margin: 0 0 16px;
-    font-size: 16px;
+    font-size: 20px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.9);
@@ -80,7 +80,7 @@
     margin-bottom: 10px;
     color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .mycareer-footer__col a:hover {

@@ -23,6 +23,7 @@ header.mycareer-header {
     border-radius: 999px;
     background: #111;
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+    margin-bottom: 50px;
 }
 
 .mycareer-header-links {
@@ -43,7 +44,7 @@ header.mycareer-header {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 18px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
 }

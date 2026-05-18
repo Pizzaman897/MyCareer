@@ -7,16 +7,16 @@ class LegalController extends Controller
 {
     public function privacypolicy()
     {
-        $this->view('Legal.privacypolicy');
+        $this->view('Legal.privacy-policy');
     }
 
     public function termsofservice()
     {
-        $this->view('Legal.termsofservice');
+        $this->view('Legal.terms-of-service');
     }
 
     public function cookiespolicy()
     {
-        $this->view('Legal.cookiespolicy');
+        $this->view('Legal.cookies-policy');
     }
 }

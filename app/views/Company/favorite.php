@@ -15,7 +15,6 @@
         <div class="favorite-content">
             <section class="favorite-header">
                 <h1>Your Saved Career Choices</h1>
-                <h3>Your Saved Career Choices</h3>
                 
                 <p class="favorite-description">Here are the careers you’ve marked as your favorites. Keep track of the paths you’re most interested in and explore them further.</p>
             </section>
@@ -34,7 +33,7 @@
 
                     <div class="card-details">
                         <p>
-                            A photographer is a professional who captures images for various purposes such as events, advertising, journalism, or personal projects.
+                            A photographer is a professional who captures images for various purposes such as events, advertising, journalism, or personal projects. They use different types of cameras, lenses, and lighting equipment to create high-quality photos that convey messages, tell stories, or preserve special moments. In addition to taking pictures, a photographer also uses editing software to enhance and refine images, adjusting aspects like color, brightness, and composition. Creativity, technical skills, and an understanding of visual aesthetics are important for a photographer to produce compelling and meaningful photographs.
                         </p>
 
                         <button type="button" class="remove-button">

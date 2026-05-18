@@ -8,7 +8,7 @@ class InterestController extends Controller
     // /form page
     public function form()
     {
-        $this->view('interests.form');
+        $this->view('interests.personal-information-form');
     }
 
     // handle form submit
