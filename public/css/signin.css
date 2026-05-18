@@ -18,8 +18,8 @@ body {
     gap: 40px;
     align-items: center;
     padding: 40px;
-    border-bottom-left-radius: 99px;
-    border-bottom-right-radius: 99px;
+    border-bottom-left-radius: 120px;
+    border-bottom-right-radius: 120px;
     background: #ffffff;
 }
 

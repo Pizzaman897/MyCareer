@@ -18,8 +18,8 @@ body {
   width: 100%;
   background: #ffffff;
 
-  border-bottom-left-radius: 110px;
-  border-bottom-right-radius: 110px;
+  border-bottom-left-radius: 120px;
+  border-bottom-right-radius: 120px;
 
   overflow: hidden;
 }
