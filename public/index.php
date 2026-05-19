@@ -10,8 +10,8 @@ $router = new Router();
 $router->add('GET', '/landing', 'LandingController', 'landing');
 
 // Sign in page
-$router->add('GET', '/login', 'LoginController', 'login');
-$router->add('POST', '/login', 'LoginController', 'authenticate');
+$router->add('GET', '/sign-in', 'Sign_inController', 'sign_in');
+$router->add('POST', '/sign-in', 'Sign_inController', 'authenticate');
 
 // Create Account page
 $router->add('GET', '/register', 'RegisterController', 'register');

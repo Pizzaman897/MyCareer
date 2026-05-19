@@ -57,7 +57,7 @@ $message = $message ?? '';
                 </a>
             </div>
 
-            <p class="bottom-note">Have san account? <a href="/signin">Sign in</a></p>
+            <p class="bottom-note">Have san account? <a href="/sign-in">Sign in</a></p>
         </section>
     </main>
     <script src="/js/create.js" defer></script>

@@ -3,11 +3,11 @@ namespace App\Controllers;
 
 use App\Core\Controller;
 
-class CreateController extends Controller
+class RegisterController extends Controller
 {
-    public function create()
+    public function register()
     {
-        $this->view('Signinorout.Create');
+        $this->view('Login&Register.register');
     }
 
     public function store()
@@ -29,7 +29,7 @@ class CreateController extends Controller
             $message = 'Silakan isi semua field terlebih dahulu. Fitur daftar akan terhubung ke database nanti. Data slot sudah disiapkan.';
         }
 
-        $this->view('Signinorout.Create', [
+        $this->view('Login&Register.register', [
             'email' => $email,
             'phone' => $phone,
             'password' => $password,
