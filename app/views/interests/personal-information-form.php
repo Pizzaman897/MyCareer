@@ -1,125 +1,189 @@
-﻿<?php
-$submitted = $submitted ?? false;
-$profile = $profile ?? [
-    'full_name' => '',
-    'class_name' => '',
-    'school_name' => '',
-    'gender' => '',
-    'interests' => [],
-];
+﻿<!-- profile.php -->
 
-$selectedInterests = is_array($profile['interests']) ? $profile['interests'] : [];
-$genderValue = strtolower(trim($profile['gender']));
-$showGenderOther = $genderValue !== '' && !in_array($genderValue, ['male', 'female']);
-$genderOtherValue = $showGenderOther ? $profile['gender'] : '';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Build Your Personal Career Profile - MyCareer</title>
+    <title>MyCareer - Career Profile</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="/css/interest.css">
+
+    <!-- POPPINS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- HEADER -->
     <header>
-        <?php require_once '../app/views/component/Header.php'; ?>
+        <?php require_once '../app/views/Component/Header.php'; ?>
     </header>
 
-    <div class="page-wrap">
-        <div class="card-shell">
-            <div class="card-shell-inner">
-                <main class="interests-card" aria-label="Career profile form">
-                    <div class="card-header">
-                        <h1>Build Your Personal Career Profile</h1>
-                        <p class="lead">Fill in your information below to help us understand your interests, skills, and career goals. This will help generate personalized career recommendations for you.</p>
+    <!-- MAIN -->
+    <main class="profile-page">
+
+        <section class="profile-section">
+
+            <h1>Build Your Personal Career Profile</h1>
+
+            <p class="subtitle">
+                Fill in your information below to help us understand your interests,
+                skills, and career goals. This will help generate personalized
+                career recommendations for you.
+            </p>
+
+            <div class="profile-layout">
+
+                <!-- LEFT -->
+                <div class="profile-left">
+
+                    <!-- FULL NAME -->
+                    <div class="form-group">
+
+                        <label>Full Name :</label>
+
+                        <input type="text" placeholder="Enter your name">
+
                     </div>
 
-                    <?php if ($submitted && !empty($message)): ?>
-                        <div class="form-message"><?= htmlspecialchars($message) ?></div>
-                    <?php endif; ?>
+                    <!-- CLASS -->
+                    <div class="form-group">
 
-                    <form action="/form" method="POST" id="careerProfileForm">
-                        <div class="form-grid">
-                            <div class="form-fields">
-                                <div class="form-group">
-                                    <label for="full_name">Full Name :</label>
-                                    <input type="text" id="full_name" name="full_name" value="<?= htmlspecialchars($profile['full_name']) ?>" required />
-                                </div>
+                        <label>Class :</label>
 
-                                <div class="form-group">
-                                    <label for="class_name">Class :</label>
-                                    <input type="text" id="class_name" name="class_name" value="<?= htmlspecialchars($profile['class_name']) ?>" required />
-                                </div>
+                        <input type="text" placeholder="Enter your class">
 
-                                <div class="form-group">
-                                    <label for="school_name">School Name :</label>
-                                    <input type="text" id="school_name" name="school_name" value="<?= htmlspecialchars($profile['school_name']) ?>" required />
-                                </div>
+                    </div>
 
-                                <div class="form-group">
-                                    <label for="gender">Gender :</label>
-                                    <select id="gender" name="gender" required>
-                                        <option value="" <?= $genderValue === '' ? 'selected' : '' ?>>Choose gender</option>
-                                        <option value="male" <?= $genderValue === 'male' ? 'selected' : '' ?>>Male</option>
-                                        <option value="female" <?= $genderValue === 'female' ? 'selected' : '' ?>>Female</option>
-                                        <option value="other" <?= $showGenderOther ? 'selected' : '' ?>>Other</option>
-                                    </select>
-                                </div>
+                    <!-- SCHOOL -->
+                    <div class="form-group">
 
-                                <div class="form-group gender-other-row" id="genderOtherRow" style="display: <?= $showGenderOther ? 'block' : 'none' ?>;">
-                                    <label for="gender_other">Please specify gender :</label>
-                                    <input type="text" id="gender_other" name="gender_other" value="<?= htmlspecialchars($genderOtherValue) ?>" />
-                                </div>
+                        <label>School Name :</label>
 
-                                <div class="form-group">
-                                    <label for="interests">Tell us what are your interests :</label>
-                                    <select id="interests" name="interests[]" multiple size="8" required>
-                                        <?php
-                                        $options = [
-                                            'Photography',
-                                            'Reading',
-                                            'Writing',
-                                            'Drawing',
-                                            'Playing music',
-                                            'Sports',
-                                            'Playing games',
-                                            'Cooking',
-                                            'Farming',
-                                            'Watching movies',
-                                        ];
-                                        foreach ($options as $option):
-                                            $selected = in_array($option, $selectedInterests) ? 'selected' : '';
-                                        ?>
-                                            <option value="<?= htmlspecialchars($option) ?>" <?= $selected ?>><?= htmlspecialchars($option) ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                    <p class="select-help">Hold Ctrl / Command to select multiple interests.</p>
+                        <input type="text" placeholder="Enter your school name">
 
+                    </div>
 
-                                </div>
+                    <!-- GENDER -->
+                    <div class="form-group">
+
+                        <label>Gender :</label>
+
+                        <div class="custom-select" id="genderSelect">
+
+                            <div class="select-header">
+
+                                <span id="genderText">
+                                    Choose your gender
+                                </span>
+
+                                <span class="arrow"></span>
+
                             </div>
 
-                            <aside class="photo-panel">
-                                <div class="photo-circle">
-                                    <span class="camera-icon">📷</span>
+                            <div class="select-dropdown">
+
+                                <div class="option">
+                                    Male
                                 </div>
-                                <p class="photo-label">Add Photo</p>
-                            </aside>
+
+                                <div class="option">
+                                    Female
+                                </div>
+
+                                <div class="option other-option">
+
+                                    <span>Other :</span>
+
+                                    <input
+                                    type="text"
+                                    placeholder="Input your gender">
+
+                                </div>
+
+                            </div>
+
                         </div>
 
-                        <div class="form-footer">
-                            <button type="submit" class="submit">Submit</button>
+                    </div>
+
+                    <!-- INTEREST -->
+                    <div class="form-group">
+
+                        <label>
+                            Tell us what are your interests :
+                        </label>
+
+                        <div class="custom-select" id="interestSelect">
+
+                            <div class="select-header">
+
+                                <span id="interestText">
+                                    Choose your interests
+                                </span>
+
+                                <span class="arrow"></span>
+
+                            </div>
+
+                            <div class="select-dropdown interest-dropdown">
+
+                                <div class="option">Photography</div>
+                                <div class="option">Reading</div>
+                                <div class="option">Writing</div>
+                                <div class="option">Drawing</div>
+                                <div class="option">Playing music</div>
+                                <div class="option">Sports</div>
+                                <div class="option">Playing games</div>
+                                <div class="option">Cooking</div>
+                                <div class="option">Farming</div>
+                                <div class="option">Watching movies</div>
+
+                            </div>
+
                         </div>
-                    </form>
-                </main>
+
+                    </div>
+
+                </div>
+
+                <!-- RIGHT -->
+                <div class="photo-section">
+
+                    <div class="photo-circle">
+                        📷
+                    </div>
+
+                    <p>Add Photo</p>
+
+                </div>
+
             </div>
-        </div>
-    </div>
 
+            <!-- BUTTON -->
+            <div class="submit-wrapper">
+
+                <button type="button" id="submitBtn">
+                    Submit
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
     <footer>
-        <?php require_once '../app/views/component/Footer.php'; ?>
+        <?php require_once '../app/views/Component/Footer.php'; ?>
     </footer>
+
+    <!-- JS -->
     <script src="/js/interest.js"></script>
+
 </body>
 </html>

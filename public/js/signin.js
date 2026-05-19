@@ -1,14 +1,16 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('.signin-form');
-    if (!form) return;
+document.getElementById("loginForm").addEventListener("submit", function(e){
+    e.preventDefault();
 
-    form.addEventListener('submit', function (event) {
-        const email = form.querySelector('input[name="email"]').value.trim();
-        const password = form.querySelector('input[name="password"]').value.trim();
+    const inputs = this.querySelectorAll("input");
+    const email = inputs[0].value;
+    const password = inputs[1].value;
 
-        if (!email || !password) {
-            event.preventDefault();
-            alert('Silakan isi email/nomor telepon dan password terlebih dahulu.');
-        }
-    });
+    if(email === "" || password === ""){
+        alert("Harap isi semua field!");
+        return;
+    }
+
+    // redirect ke halaman berikutnya
+    window.location.href = "personal-information-form";
 });
+

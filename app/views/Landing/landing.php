@@ -26,7 +26,7 @@
                     potential and plan their future
                     more purposefully.
                     </p>
-                    <button onclick="window.location.href='register.php'">Get Started Now</button>
+                    <button onclick="window.location.href='register'">Get Started Now</button>
                 </div>
 
                 <!-- CENTER IMAGE -->
@@ -137,7 +137,7 @@
             that match who you are.
             </p>
 
-            <button onclick="window.location.href='register.php'">Get Started Now</button>
+            <button onclick="window.location.href='register'">Get Started Now</button>
         </section>
 
     </main>

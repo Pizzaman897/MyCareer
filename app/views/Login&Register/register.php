@@ -1,52 +1,45 @@
-<?php
-$email = $email ?? '';
-$phone = $phone ?? '';
-$password = $password ?? '';
-$confirm_password = $confirm_password ?? '';
-$slot = $slot ?? 'user_slot';
-$message = $message ?? '';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account</title>
-    <link rel="stylesheet" href="/css/create.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account</title>
+  <link rel="stylesheet" href="/css/register.css">
 </head>
 <body>
-    <header>
-        <?php require_once '../app/views/component/Header.php'; ?>
-    </header>
-    <main class="create-page">
-        <aside class="side-panel">
-            <div class="side-image">
-                <img src="/asset/Foto Create Account.png" alt="Create account illustration">
-            </div>
-        </aside>
 
-        <section class="create-card">
-            <?php if (!empty($message)): ?>
-                <div class="message-banner"><?= htmlspecialchars($message) ?></div>
-            <?php endif; ?>
+<header>
+  <?php require_once '../app/views/Component/Header.php'; ?>
+</header>
 
-            <h1>Create Account</h1>
+<!-- MAIN -->
+<section class="register-section">
 
-            <form class="create-form" action="/create" method="post">
-                <input type="hidden" name="slot" value="<?= htmlspecialchars($slot) ?>">
+  <div class="container">
 
-                <input type="text" class="form-input" name="email" placeholder="Email or username" value="<?= htmlspecialchars($email) ?>" autocomplete="username">
+    <!-- LEFT IMAGE -->
+    <div class="left">
+      <img src="/asset/register.png" alt="illustration">
+    </div>
 
-                <input type="tel" class="form-input" name="phone" placeholder="Phone Number" value="<?= htmlspecialchars($phone) ?>" autocomplete="tel">
+    <!-- RIGHT FORM -->
+    <div class="right">
+      <h1>Create Account</h1>
 
-                <input type="password" class="form-input" name="password" placeholder="Password" value="<?= htmlspecialchars($password) ?>" autocomplete="new-password">
+      <form id="registerForm">
+        <input type="text" placeholder="Email or username" required>
+        <input type="text" placeholder="Phone Number" required>
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Confirm Password" required>
 
-                <input type="password" class="form-input" name="confirm_password" placeholder="Confirm Password" value="<?= htmlspecialchars($confirm_password) ?>" autocomplete="new-password">
+        <button type="submit">Continue</button>
+      </form>
 
-                <button type="submit" class="cta-button">Continue</button>
-            </form>
-
-            <div class="divider">Or</div>
+      <div class="divider">
+        <span></span>
+        <p>Or</p>
+        <span></span>
+      </div>
 
             <div class="social-buttons">
                 <a href="#" class="social-icon" aria-label="Continue with Google">
@@ -57,9 +50,19 @@ $message = $message ?? '';
                 </a>
             </div>
 
-            <p class="bottom-note">Have san account? <a href="/sign-in">Sign in</a></p>
-        </section>
-    </main>
-    <script src="/js/create.js" defer></script>
+      <p class="login-text">
+        Have an account? <a href="/sign-in">Sign in</a>
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  <?php require_once '../app/views/Component/Footer.php'; ?>
+</footer>
+
+<script src="/js/register.js"></script>
 </body>
 </html>

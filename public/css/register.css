@@ -10,15 +10,15 @@ body{
   color:#fff;
 }
 
-/* HEADER */
+/* HEADER FIX (biar sama kaya landing) */
 header{
   width:100%;
   position:relative;
   z-index:1000;
 }
 
-/* SECTION */
-.login-section{
+/* MAIN */
+.register-section{
   background:#fff;
   color:#000;
   border-bottom-left-radius:120px;
@@ -36,11 +36,17 @@ header{
 }
 
 /* LEFT */
-.left{
+.left img{
+  width:500px;
+  max-width:100%;
+}
+
+/* RIGHT */
+.right{
   width:500px;
 }
 
-.left h1{
+.right h1{
   font-size:60px;
   font-weight:800;
   margin-bottom:40px;
@@ -53,8 +59,7 @@ form{
   gap:20px;
 }
 
-form input[type="text"],
-form input[type="password"]{
+form input{
   padding:18px 25px;
   border-radius:20px;
   border:1px solid #9f9f9f;
@@ -63,25 +68,6 @@ form input[type="password"]{
   box-shadow:0 5px 10px rgba(0,0,0,0.15);
 }
 
-/* OPTIONS */
-.options{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-top:5px;
-  font-size:16px;
-}
-
-.options input{
-  margin-right:8px;
-}
-
-.options a{
-  color:#000;
-  text-decoration:underline;
-}
-
-/* BUTTON */
 form button{
   margin-top:20px;
   padding:18px;
@@ -117,7 +103,6 @@ form button:hover{
   font-size:18px;
 }
 
-/* SOCIAL */
 .social-buttons {
     display: flex;
     justify-content: center;
@@ -155,22 +140,16 @@ form button:hover{
     display: none;
 }
 
-/* REGISTER TEXT */
-.register-text{
+/* LOGIN */
+.login-text{
   text-align:center;
   margin-top:20px;
   font-size:18px;
 }
 
-.register-text a{
+.login-text a{
   color:#5a5a9f;
   text-decoration:none;
-}
-
-/* RIGHT */
-.right img{
-  width:500px;
-  max-width:100%;
 }
 
 
@@ -188,11 +167,11 @@ footer{
     text-align:center;
   }
 
-  .left{
+  .right{
     width:100%;
   }
 
-  .right img{
+  .left img{
     width:300px;
   }
 }

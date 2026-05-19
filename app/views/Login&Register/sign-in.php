@@ -1,49 +1,44 @@
-﻿<?php
-$email = $email ?? '';
-$password = $password ?? '';
-$remember = $remember ?? '';
-$slot = $slot ?? 'user_slot';
-$message = $message ?? '';
-?>
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in</title>
-    <link rel="stylesheet" href="/css/signin.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <link rel="stylesheet" href="/css/signin.css">
 </head>
 <body>
-    <header>
-        <?php require_once '../app/views/component/Header.php'; ?>
-    </header>
-    <main class="signin-page">
-        <section class="signin-card">
-            <?php if (!empty($message)): ?>
-                <div class="message-banner"><?= htmlspecialchars($message) ?></div>
-            <?php endif; ?>
 
-            <h1>Sign in</h1>
+<header>
+  <?php require_once '../app/views/Component/Header.php'; ?>
+</header>
 
-            <form class="signin-form" action="/signin" method="post">
-                <input type="hidden" name="slot" value="<?= htmlspecialchars($slot) ?>">
+<section class="login-section">
 
-                <input type="text" class="form-input" name="email" placeholder="Email atau nomor telepon" value="<?= htmlspecialchars($email) ?>" autocomplete="username">
+  <div class="container">
 
-                <input type="password" class="form-input" name="password" placeholder="Password" value="<?= htmlspecialchars($password) ?>" autocomplete="current-password">
+    <!-- LEFT -->
+    <div class="left">
+      <h1>Sign in</h1>
 
-                <div class="form-row">
-                    <label class="checkbox-group">
-                        <input type="checkbox" name="remember" <?= $remember ?>>
-                        Remember me
-                    </label>
-                    <a href="#" class="forgot-password">Forgot password?</a>
-                </div>
+      <form id="loginForm">
+        <input type="text" placeholder="Email atau nomor telepon" required>
+        <input type="password" placeholder="Password" required>
 
-                <button type="submit" class="cta-button">Continue</button>
-            </form>
+        <div class="options">
+          <label>
+            <input type="checkbox"> Remember me
+          </label>
+          <a href="#">Forgot password?</a>
+        </div>
 
-            <div class="divider">Or</div>
+        <button type="submit">Continue</button>
+      </form>
+
+      <div class="divider">
+        <span></span>
+        <p>Or</p>
+        <span></span>
+      </div>
 
             <div class="social-buttons">
                 <a href="#" class="social-icon" aria-label="Continue with Google">
@@ -54,16 +49,24 @@ $message = $message ?? '';
                 </a>
             </div>
 
-            <p class="bottom-note">Don't have an account? <a href="/register">Create Account</a></p>
-        </section>
+      <p class="register-text">
+        Don’t have an account? <a href="register">Create Account</a>
+      </p>
+    </div>
 
-        <aside class="side-panel">
-            <div class="side-image">
-                <img src="/asset/Foto Signin.png" alt="Sign in illustration">
-            </div>
-        </aside>
-    </main>
+    <!-- RIGHT -->
+    <div class="right">
+      <img src="/asset/Sign-in.png" alt="illustration">
+    </div>
 
-    <script src="/js/signin.js" defer></script>
+  </div>
+
+</section>
+
+<footer>
+  <?php require_once '../app/views/Component/Footer.php'; ?>
+</footer>
+
+<script src="/js/signin.js"></script>
 </body>
 </html>
