@@ -7,6 +7,7 @@
 body{
   font-family:'Poppins', sans-serif;
   background:#000;
+  color:#fff;
 }
 
 /* CONTAINER */
@@ -20,8 +21,9 @@ body{
   background:#fff;
   border-bottom-left-radius:120px;
   border-bottom-right-radius:120px;
-  padding:60px 0 120px;
+  padding:30px 0 300px;
   text-align:center;
+  color:#000;
 }
 
 /* BADGE */
@@ -74,6 +76,7 @@ body{
 .card h3{
   font-size:20px;
   margin-bottom:10px;
+  color:#000;
 }
 
 .card p{
@@ -92,7 +95,7 @@ body{
   align-items:center;
   justify-content:space-between;
   background:linear-gradient(90deg,#2c2c2c,#3a3a3a);
-  border-radius:25px;
+  border-radius:30px;
   padding:50px;
   position:relative;
   overflow:hidden;
@@ -105,7 +108,7 @@ body{
 }
 
 .form-box h2{
-  font-size:30px;
+  font-size:50px;
   margin-bottom:20px;
 }
 
@@ -113,17 +116,18 @@ body{
   display:block;
   margin-top:15px;
   margin-bottom:5px;
-  font-size:16px;
+  font-size:24px;
 }
 
 .form-box input,
 .form-box textarea{
   width:100%;
   padding:15px;
-  border-radius:10px;
+  border-radius:12px;
   border:none;
   margin-bottom:10px;
-  font-size:16px;
+  font-size:20px;
+  outline:none;
 }
 
 .form-box textarea{
@@ -133,11 +137,12 @@ body{
 
 .form-box button{
   margin-top:20px;
-  padding:12px 25px;
-  border-radius:30px;
+  padding:14px 28px;
+  border-radius:40px;
   border:none;
   background:#fff;
   cursor:pointer;
+  font-size:20px;
 }
 
 /* IMAGE */
@@ -146,85 +151,105 @@ body{
   position:absolute;
   right:0;
   bottom:0;
+  height:110%;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  z-index: 0;
 }
 
 .form-image img{
-  width:100%;
+  width:450px;
+  max-width:none;
 }
 
 /* THANK YOU */
 .thank-you{
   padding:60px 0 120px;
+
 }
 
 .thank-you .container{
-  background:url('/asset/city.jpg') center/cover;
-  border-radius:25px;
-  height:250px;
   position:relative;
+  width:85%;
+  height:470px;
+  border-radius:32px;
+  overflow:hidden;
 }
 
-.overlay{
+/* BG IMAGE */
+.bg-contact{
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.5);
-  border-radius:25px;
+  z-index:1;
+}
+
+.bg-contact img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+
+  /* posisi gambar */
+  object-position:center center;
+
+  display:block;
+  filter:brightness(0.9);
+}
+
+/* OVERLAY */
+.overlay{
+  position:relative;
+  width:100%;
+  height:100%;
+
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
-  color:#fff;
+
+  background:rgba(0,0,0,0.25);
+  padding:40px;
+
+  z-index:2;
 }
 
+/* TITLE */
 .overlay h2{
-  font-size:40px;
-  margin-bottom:10px;
+  font-size:72px;
+  font-weight:700;
+  color:#fff;
+  margin-bottom:18px;
+  line-height:1.1;
 }
 
+/* DESC */
 .overlay p{
-  font-size:18px;
-  max-width:600px;
+  font-size:24px;
+  font-weight:500;
+  color:#fff;
+  line-height:1.5;
+  max-width:850px;
+}
+
+.overlay h2,
+.overlay p{
+  position:relative;
+  z-index:3;
 }
 
 /* RESPONSIVE */
-@media(max-width:1200px){
-
-  .info-cards{
-    flex-direction:column;
-  }
-
-  .card{
-    width:100%;
-  }
-
-  .form-wrapper{
-    flex-direction:column;
-  }
-
-  .form-box{
-    width:100%;
-  }
-
-  .form-image{
-    position:relative;
-    width:100%;
-    margin-top:30px;
-  }
-}
-
 @media(max-width:768px){
 
-  .contact-hero h1{
-    font-size:40px;
+  .thank-you .container{
+    height:260px;
   }
 
-  .contact-hero p{
-    font-size:18px;
+  .overlay h2{
+    font-size:38px;
   }
 
-  .contact-hero{
-    border-bottom-left-radius:60px;
-    border-bottom-right-radius:60px;
+  .overlay p{
+    font-size:16px;
   }
 }

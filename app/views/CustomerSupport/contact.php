@@ -87,7 +87,7 @@
             </div>
 
             <div class="form-image">
-                <img src="/asset/Jose.001.png" alt="person">
+                <img src="/asset/Lewis.001.png" alt="person">
             </div>
 
         </div>
@@ -97,6 +97,9 @@
     <section class="thank-you">
         <div class="container">
             <div class="overlay">
+                <div class="bg-contact">
+                    <img src="/asset/Career-bg.png" alt="person">
+                </div>
                 <h2>Thank you for contacting us!</h2>
                 <p>
                     We appreciate your message and will respond shortly.
