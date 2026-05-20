@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../app/core/Controller.php';
 require_once __DIR__ . '/../app/core/Router.php';
-
+require_once __DIR__ . '/../app/core/Database.php';
 use App\Core\Router;
 
 $router = new Router();
@@ -30,8 +30,11 @@ $router->add('GET', '/mail', 'MailController', 'mail');
 //About page
 $router->add('GET', '/about-us', 'MailController', 'about_us');
 
-//Favorite page
-$router->add('GET', '/favorite', 'MailController', 'favorite');
+// Favorite page
+$router->add('GET', '/favorite', 'FavoriteController', 'index');
+$router->add('POST', '/favorite/add', 'FavoriteController', 'add');
+$router->add('POST', '/favorite/remove', 'FavoriteController', 'remove');
+
 
 // Help Center page
 $router->add('GET', '/help-center', 'CustomerSupportController', 'help_center');

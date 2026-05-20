@@ -16,12 +16,10 @@
             <div class="page-shell-inner">
                 <section class="profile-section">
 
-                    <!-- JUDUL DIPISAH -->
                     <div class="profile-title">
                         <h1>Your Personal Career Profile</h1>
                     </div>
 
-                    <!-- GRID BARU -->
                     <div class="profile-card-shell">
                         <div class="profile-card-image">
                             <img src="/asset/Home-1.png" alt="Profile photo" />
@@ -30,27 +28,32 @@
                         <div class="profile-card-details">
                             <div class="profile-field">
                                 <label>Full Name :</label>
-                                <div>Joey Jason Lee</div>
+                                <div><?php echo htmlspecialchars($profile['name'] ?? ''); ?></div>
                             </div>
 
                             <div class="profile-field">
                                 <label>Class :</label>
-                                <div>XI TKJ 3</div>
+                                <div><?php echo htmlspecialchars($profile['class'] ?? ''); ?></div>
                             </div>
 
                             <div class="profile-field">
                                 <label>School Name :</label>
-                                <div>SMK K IMMANUEL 1</div>
+                                <div><?php echo htmlspecialchars($profile['school'] ?? ''); ?></div>
                             </div>
 
                             <div class="profile-field">
                                 <label>Gender :</label>
-                                <div>Male</div>
+                                <div><?php echo htmlspecialchars($profile['gender'] ?? ''); ?></div>
                             </div>
 
                             <div class="profile-field">
                                 <label>Tell us what you like :</label>
-                                <div>Photography</div>
+                                <div>
+                                    <?php
+                                    $interests = $_SESSION['career_profile']['interests'] ?? [];
+                                    echo htmlspecialchars($interests[0] ?? '');
+                                    ?>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -64,50 +67,41 @@
                             <h3>Your Personalized Career Path</h3>
                         </div>
                     </div>
+
                     <p class="recommendation-intro">
-                        Based on your interests, skills, and preferences, we have identified career paths that match your profile. These recommendations are designed to help you explore opportunities that fit who you are.
+                        Based on your interests, skills, and preferences, we have identified career paths that match your profile.
+                        These recommendations are designed to help you explore opportunities that fit who you are.
                     </p>
 
                     <div class="recommendations-list">
-                        <article class="recommendation-card" data-role="photographer">
-                            <button type="button" class="card-toggle" aria-expanded="false" aria-controls="photographer-details">
-                                <span>Photographer</span>
-                                <span class="toggle-icon">›</span>
-                            </button>
-                            <p class="card-summary">A photographer captures images for events, advertising, or personal projects using cameras and editing tools.</p>
-                            <div class="card-details" id="photographer-details">
-                                <p>A photographer is a professional who captures images for various purposes such as events, advertising, journalism, or personal projects. They use different types of cameras, lenses, and lighting equipment to create high-quality photos that convey messages, tell stories, or preserve special moments. Creativity, technical skills, and an understanding of visual aesthetics are important for a photographer to produce compelling and meaningful photographs.</p>
-                                <button type="button" class="favorite-button">Add to favorite</button>
-                            </div>
-                        </article>
+                        <?php if (!empty($recommended)) : ?>
+                            <?php foreach ($recommended as $i => $cp) : ?>
+                                <?php
+                                    $detailsId = 'reco-details-' . $i;
+                                    $careerPathId = (int)($cp['career_path_id'] ?? 0);
+                                    $isFav = !empty($favoriteIds[$careerPathId]);
+                                ?>
+                                <article class="recommendation-card">
+                                    <button type="button" class="card-toggle" aria-expanded="false" aria-controls="<?php echo $detailsId; ?>">
+                                        <span><?php echo htmlspecialchars($cp['name'] ?? ''); ?></span>
+                                        <span class="toggle-icon">›</span>
+                                    </button>
 
-                        <article class="recommendation-card" data-role="photojournalist">
-                            <button type="button" class="card-toggle" aria-expanded="false" aria-controls="photojournalist-details">
-                                <span>Photojournalist</span>
-                                <span class="toggle-icon">›</span>
-                            </button>
-                            <p class="card-summary">A photojournalist takes photos to tell news stories and document real-life events.</p>
-                            <div class="card-details" id="photojournalist-details">
-                                <p>Photojournalists create visual stories by capturing newsworthy events, people, and places. They work quickly in the field to document real-life moments clearly and accurately, often under fast-moving or challenging conditions. Strong storytelling, editing, and ethical judgment are essential for sharing impactful images that help audiences understand complex events.</p>
-                                <button type="button" class="favorite-button">Add to favorite</button>
-                            </div>
-                        </article>
+                                    <p class="card-summary"><?php echo htmlspecialchars($cp['description'] ?? ''); ?></p>
 
-                        <article class="recommendation-card" data-role="contentcreator">
-                            <button type="button" class="card-toggle" aria-expanded="false" aria-controls="contentcreator-details">
-                                <span>Content Creator</span>
-                                <span class="toggle-icon">›</span>
-                            </button>
-                            <p class="card-summary">A content creator produces photos and visual content for social media platforms to engage audiences.</p>
-                            <div class="card-details" id="contentcreator-details">
-                                <p>Content creators develop visual stories, photography, and short-form media for social channels, blogs, and branded campaigns. They combine creative ideas, editing skills, and audience understanding to make content that grows engagement and builds a consistent online presence.</p>
-                                <button type="button" class="favorite-button">Add to favorite</button>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="see-more-link">
-                        <a href="#">See More &gt;</a>
+                                    <div class="card-details" id="<?php echo $detailsId; ?>">
+                                        <p><?php echo htmlspecialchars($cp['more_info'] ?? ''); ?></p>
+                                        <button type="button"
+                                                class="favorite-button<?php echo $isFav ? ' active' : ''; ?>"
+                                                data-career-path-id="<?php echo $careerPathId; ?>">
+                                            <?php echo $isFav ? 'Added to favorite' : 'Add to favorite'; ?>
+                                        </button>
+                                    </div>
+                                </article>
+                            <?php endforeach; ?>
+                        <?php else : ?>
+                            <p>No recommendations found. Please complete your profile interests first.</p>
+                        <?php endif; ?>
                     </div>
                 </section>
             </div>
@@ -121,3 +115,4 @@
     <script src="/js/home.js"></script>
 </body>
 </html>
+

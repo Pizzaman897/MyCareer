@@ -1,12 +1,40 @@
 <?php
 namespace App\Controllers;
 
+require_once __DIR__ . '/../core/Controller.php';
+require_once __DIR__ . '/../models/Student.php';
+
 use App\Core\Controller;
+use App\Models\Student;
 
 class HomeController extends Controller
+
+
 {
     public function home()
     {
-        $this->view('home.home');
+        session_start();
+
+        $student = new Student();
+        // Block guests (your Student::requireLogin redirects to /signin)
+        $student->requireLogin();
+
+        $userPrivateId = $student->getUserPrivateId();
+        if (!$userPrivateId) {
+            header('Location: /sign-in');
+            exit;
+        }
+
+        $userInfoId = $student->getUserInfoId($userPrivateId);
+        $profile = $student->getProfile($userPrivateId);
+        $recommended = $userInfoId ? $student->getRecommendationsByUserInfoId($userInfoId) : [];
+        $favoriteIds = $student->getFavoriteIdsByUserPrivateId($userPrivateId);
+
+        $this->view('home.home', [
+            'profile' => $profile,
+            'recommended' => $recommended,
+            'favoriteIds' => $favoriteIds,
+        ]);
     }
 }
+

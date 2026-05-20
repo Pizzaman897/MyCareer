@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="/css/landing.css">
 </head>
 <body>
-    <header>
-        <?php require_once '../app/views/Component/Header.php'; ?>
-    </header>
 
     <main class="landing-page">
         <section class="hero">
@@ -141,9 +138,5 @@
         </section>
 
     </main>
-    
-    <footer>
-        <?php require_once '../app/views/component/Footer.php'; ?>
-    </footer>
 </body>
 </html>

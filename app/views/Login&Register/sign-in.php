@@ -8,9 +8,6 @@
 </head>
 <body>
 
-<header>
-  <?php require_once '../app/views/Component/Header.php'; ?>
-</header>
 
 <section class="login-section">
 
@@ -62,10 +59,6 @@
   </div>
 
 </section>
-
-<footer>
-  <?php require_once '../app/views/Component/Footer.php'; ?>
-</footer>
 
 <script src="/js/signin.js"></script>
 </body>

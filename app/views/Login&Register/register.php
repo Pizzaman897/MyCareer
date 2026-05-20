@@ -7,11 +7,6 @@
   <link rel="stylesheet" href="/css/register.css">
 </head>
 <body>
-
-<header>
-  <?php require_once '../app/views/Component/Header.php'; ?>
-</header>
-
 <!-- MAIN -->
 <section class="register-section">
 
@@ -26,14 +21,17 @@
     <div class="right">
       <h1>Create Account</h1>
 
-      <form id="registerForm">
-        <input type="text" placeholder="Email or username" required>
-        <input type="text" placeholder="Phone Number" required>
-        <input type="password" placeholder="Password" required>
-        <input type="password" placeholder="Confirm Password" required>
+      <form id="registerForm" method="POST" action="/register">
+        <input type="text" name="email" placeholder="Email or username" required>
+        <input type="text" name="phone" placeholder="Phone Number" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+
+        <input type="hidden" name="slot" value="" />
 
         <button type="submit">Continue</button>
       </form>
+
 
       <div class="divider">
         <span></span>
@@ -58,10 +56,6 @@
   </div>
 
 </section>
-
-<footer>
-  <?php require_once '../app/views/Component/Footer.php'; ?>
-</footer>
 
 <script src="/js/register.js"></script>
 </body>
