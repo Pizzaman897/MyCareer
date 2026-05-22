@@ -79,10 +79,13 @@ class Sign_inController extends Controller
 
         // Requirement: if sign-in happens, always go to home.
         // Account creation still goes to the profile completion form.
-        header('Location: /home');
+        if (!$hasProfile || empty($hasProfile['id'])) {
+            header('Location: /personal-information-form');
+        } else {
+            header('Location: /home');
+        }
         exit;
     }
 }
-
 
 

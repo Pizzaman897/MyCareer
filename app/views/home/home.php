@@ -21,9 +21,6 @@
                     </div>
 
                     <div class="profile-card-shell">
-                        <div class="profile-card-image">
-                            <img src="/asset/Home-1.png" alt="Profile photo" />
-                        </div>
 
                         <div class="profile-card-details">
                             <div class="profile-field">

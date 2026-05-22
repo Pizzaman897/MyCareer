@@ -17,19 +17,17 @@
     <div class="left">
       <h1>Sign in</h1>
 
-      <form id="loginForm">
-        <input type="text" placeholder="Email atau nomor telepon" required>
-        <input type="password" placeholder="Password" required>
-
-        <div class="options">
-          <label>
-            <input type="checkbox"> Remember me
-          </label>
-          <a href="#">Forgot password?</a>
-        </div>
-
-        <button type="submit">Continue</button>
-      </form>
+      <form id="loginForm" method="POST" action="/sign-in">
+    <input type="text" name="email" placeholder="Email atau nomor telepon" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <div class="options">
+        <label>
+            <input type="checkbox" name="remember"> Remember me
+        </label>
+        <a href="#">Forgot password?</a>
+    </div>
+    <button type="submit">Continue</button>
+</form>
 
       <div class="divider">
         <span></span>

@@ -47,9 +47,10 @@ body {
 /* PROFILE LAYOUT */
 .profile-card-shell {
   display: grid;
-  grid-template-columns: 340px 1fr;
+  grid-template-columns: 1425px 1fr;
   gap: 55px;
   align-items: start;
+  width: 100px;
 }
 
 /* IMAGE */

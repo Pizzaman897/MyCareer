@@ -117,11 +117,11 @@ header.mycareer-header {
 <header class="mycareer-header">
     <div class="mycareer-header-bar">
         <div class="mycareer-header-links">
-            <a href="/home">Home</a>
+            <a href="/faq">FAQ</a>
             <a href="/about-us">About us</a>
         </div>
 
-        <a class="mycareer-header-brand" href="/landing">
+        <a class="mycareer-header-brand" href="/home">
             <img src="/asset/Logo.png" alt="MyCareer Logo">
         </a>
 

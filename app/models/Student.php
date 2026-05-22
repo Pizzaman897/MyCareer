@@ -47,7 +47,7 @@ class Student
         $allowedPaths = $allowedPaths ?: [
             '/',
             '/landing',
-            '/signin',
+            '/sign-in',
             '/create',
             '/assets',
         ];
@@ -55,7 +55,7 @@ class Student
         // Guest blocked -> store intended destination and redirect to /signin.
         if (!in_array($path, $allowedPaths, true)) {
             $_SESSION['after_login'] = $path;
-            header('Location: /signin');
+            header('Location: /sign-in');
             exit;
         }
     }

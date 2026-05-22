@@ -58,7 +58,10 @@
         </div>
     </div>
 </main>
-
+                        
+    <footer>
+        <?php require_once '../app/views/component/Footer.php'; ?>
+    </footer>
 <script src="/js/favorite.js"></script>
 </body>
 </html>
