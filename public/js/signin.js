@@ -1,16 +1,14 @@
-document.getElementById("loginForm").addEventListener("submit", function(e){
-    e.preventDefault();
+const loginForm = document.getElementById("loginForm");
 
-    const inputs = this.querySelectorAll("input");
-    const email = inputs[0].value;
-    const password = inputs[1].value;
+if (loginForm) {
+    loginForm.addEventListener("submit", function(e) {
+        const email = this.querySelector('input[name="email"]').value.trim();
+        const password = this.querySelector('input[name="password"]').value.trim();
 
-    if(email === "" || password === ""){
-        alert("Harap isi semua field!");
-        return;
-    }
-
-    // redirect ke halaman berikutnya
-    window.location.href = "personal-information-form";
-});
+        if (email === "" || password === "") {
+            alert("Harap isi semua field!");
+            e.preventDefault();
+        }
+    });
+}
 

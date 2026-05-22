@@ -113,11 +113,15 @@ header.mycareer-header {
     }
 }
 </style>
-
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <header class="mycareer-header">
     <div class="mycareer-header-bar">
         <div class="mycareer-header-links">
-            <a href="/faq">FAQ</a>
+            <a href="/logout">Logout</a>
             <a href="/about-us">About us</a>
         </div>
 

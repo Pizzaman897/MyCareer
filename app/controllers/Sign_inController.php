@@ -8,7 +8,72 @@ class Sign_inController extends Controller
 {
     public function sign_in()
     {
+        session_start();
+
+        if (!empty($_SESSION['user_id'])) {
+            header('Location: /home');
+            exit;
+        }
+
         $this->view('Login&Register.sign-in');
+    }
+
+    public function admin_sign_in()
+    {
+        session_start();
+
+        if (!empty($_SESSION['is_admin'])) {
+            header('Location: /admin');
+            exit;
+        }
+
+        $this->view('Login&Register.sign-in-admin');
+    }
+
+    public function authenticate_admin()
+    {
+        session_start();
+
+        $email = trim($_POST['email'] ?? '');
+        $password = trim($_POST['password'] ?? '');
+        $remember = isset($_POST['remember']) ? 'checked' : '';
+
+        if ($email === '' || $password === '') {
+            $message = 'Silakan isi email dan password terlebih dahulu.';
+            $this->view('Login&Register.sign-in-admin', [
+                'email' => $email,
+                'remember' => $remember,
+                'message' => $message
+            ]);
+            return;
+        }
+
+        $db = new Database();
+        $conn = $db->getConnection();
+
+        $adminStmt = mysqli_prepare($conn, 'SELECT id, email FROM admins WHERE email = ? AND password = ? LIMIT 1');
+        mysqli_stmt_bind_param($adminStmt, 'ss', $email, $password);
+        mysqli_stmt_execute($adminStmt);
+        $adminRes = mysqli_stmt_get_result($adminStmt);
+        $adminRow = $adminRes ? mysqli_fetch_assoc($adminRes) : null;
+
+        if (!$adminRow) {
+            $message = 'Email atau password admin salah.';
+            $this->view('Login&Register.sign-in-admin', [
+                'email' => $email,
+                'remember' => $remember,
+                'message' => $message
+            ]);
+            return;
+        }
+
+        unset($_SESSION['user_id']);
+        $_SESSION['is_admin'] = true;
+        $_SESSION['admin_id'] = (int)$adminRow['id'];
+        $_SESSION['admin_name'] = $adminRow['email'];
+
+        header('Location: /admin');
+        exit;
     }
 
     public function authenticate()
@@ -18,15 +83,12 @@ class Sign_inController extends Controller
         $email = trim($_POST['email'] ?? '');
         $password = trim($_POST['password'] ?? '');
         $remember = isset($_POST['remember']) ? 'checked' : '';
-        $slot = $_POST['slot'] ?? '';
 
         if ($email === '' || $password === '') {
             $message = 'Silakan isi email dan password terlebih dahulu.';
             $this->view('Login&Register.sign-in', [
                 'email' => $email,
-                'password' => $password,
                 'remember' => $remember,
-                'slot' => $slot,
                 'message' => $message
             ]);
             return;
@@ -35,19 +97,32 @@ class Sign_inController extends Controller
         $db = new Database();
         $conn = $db->getConnection();
 
-        $stmt = mysqli_prepare($conn, 'SELECT id, password FROM user_private WHERE email = ? LIMIT 1');
-        mysqli_stmt_bind_param($stmt, 's', $email);
+        // Check admin credentials first
+        $adminStmt = mysqli_prepare($conn, 'SELECT id FROM admins WHERE email = ? AND password = ? LIMIT 1');
+        mysqli_stmt_bind_param($adminStmt, 'ss', $email, $password);
+        mysqli_stmt_execute($adminStmt);
+        $adminRes = mysqli_stmt_get_result($adminStmt);
+        $adminRow = $adminRes ? mysqli_fetch_assoc($adminRes) : null;
+
+        if ($adminRow) {
+            $_SESSION['user_id'] = 0;
+            $_SESSION['is_admin'] = true;
+            $_SESSION['admin_id'] = (int)$adminRow['id'];
+            header('Location: /admin');
+            exit;
+        }
+
+        $stmt = mysqli_prepare($conn, 'SELECT id, password FROM user_private WHERE email = ? OR phone_number = ? LIMIT 1');
+        mysqli_stmt_bind_param($stmt, 'ss', $email, $email);
         mysqli_stmt_execute($stmt);
         $res = mysqli_stmt_get_result($stmt);
         $row = $res ? mysqli_fetch_assoc($res) : null;
 
         if (!$row) {
-            $message = 'Email tidak ditemukan.';
+            $message = 'Email atau nomor telepon tidak ditemukan.';
             $this->view('Login&Register.sign-in', [
                 'email' => $email,
-                'password' => $password,
                 'remember' => $remember,
-                'slot' => $slot,
                 'message' => $message
             ]);
             return;
@@ -58,32 +133,36 @@ class Sign_inController extends Controller
             $message = 'Password salah.';
             $this->view('Login&Register.sign-in', [
                 'email' => $email,
-                'password' => $password,
                 'remember' => $remember,
-                'slot' => $slot,
                 'message' => $message
             ]);
             return;
         }
 
-        // Session mapping required by your spec
         $_SESSION['user_id'] = (int)$row['id'];
+        header('Location: /home');
+        exit;
+    }
 
-        // If profile not created yet, ask user to complete it
-        $stmt = mysqli_prepare($conn, 'SELECT id FROM user_info WHERE user_private_id = ? LIMIT 1');
-        $userPrivateId = $_SESSION['user_id'];
-        mysqli_stmt_bind_param($stmt, 'i', $userPrivateId);
-        mysqli_stmt_execute($stmt);
-        $res = mysqli_stmt_get_result($stmt);
-        $hasProfile = $res ? mysqli_fetch_assoc($res) : null;
-
-        // Requirement: if sign-in happens, always go to home.
-        // Account creation still goes to the profile completion form.
-        if (!$hasProfile || empty($hasProfile['id'])) {
-            header('Location: /personal-information-form');
-        } else {
-            header('Location: /home');
+    public function logout()
+    {
+        session_start();
+        $_SESSION = [];
+        if (ini_get('session.use_cookies')) {
+            $params = session_get_cookie_params();
+            setcookie(
+                session_name(),
+                '',
+                time() - 42000,
+                $params['path'],
+                $params['domain'],
+                $params['secure'],
+                $params['httponly']
+            );
         }
+        session_destroy();
+
+        header('Location: /landing');
         exit;
     }
 }

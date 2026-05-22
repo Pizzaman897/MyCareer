@@ -7,13 +7,14 @@ class Router
 {
     private array $routes = [];
 
-    public function add(string $method, string $uri, string $controller, string $function)
+    public function add(string $method, string $uri, string $controller, string $function, array $options = [])
     {
         $this->routes[] = [
             'method' => $method,
             'uri' => $uri,
             'controller' => $controller,
-            'function' => $function
+            'function' => $function,
+            'options' => $options,
         ];
     }
     public function run()
@@ -36,6 +37,17 @@ class Router
 
             if (preg_match($pattern, $uri, $matches) && $method  === $route['method']) {
                 array_shift($matches);
+
+                if (!empty($route['options']['requires_admin'])) {
+                    if (session_status() === PHP_SESSION_NONE) {
+                        session_start();
+                    }
+
+                    if (empty($_SESSION['is_admin']) || empty($_SESSION['admin_id'])) {
+                        header('Location: /sign-in-admin');
+                        exit;
+                    }
+                }
 
                 require_once '../app/controllers/' . $route['controller'] . '.php';
 

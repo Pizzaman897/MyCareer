@@ -48,6 +48,7 @@ class Student
             '/',
             '/landing',
             '/sign-in',
+            '/sign-in-admin',
             '/create',
             '/assets',
         ];
@@ -135,6 +136,23 @@ class Student
         }
 
         return $recommended;
+    }
+
+    public function getInterestsByUserInfoId(int $userInfoId): array
+    {
+        $conn = $this->db->getConnection();
+        $stmt = mysqli_prepare($conn, 'SELECT i.name FROM user_interests ui JOIN interests i ON ui.interest_id = i.id WHERE ui.user_info_id = ? ORDER BY i.name');
+        mysqli_stmt_bind_param($stmt, 'i', $userInfoId);
+        mysqli_stmt_execute($stmt);
+        $res = mysqli_stmt_get_result($stmt);
+
+        $interests = [];
+        while ($row = $res ? mysqli_fetch_assoc($res) : null) {
+            if (!$row) break;
+            $interests[] = $row['name'];
+        }
+
+        return $interests;
     }
 
     /**

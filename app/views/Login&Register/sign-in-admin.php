@@ -1,13 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign In</title>
+  <title>Admin Sign In</title>
   <link rel="stylesheet" href="/css/signin.css">
 </head>
 <body>
-
 
 <section class="login-section">
 
@@ -15,20 +14,19 @@
 
     <!-- LEFT -->
     <div class="left">
-      <h1>Sign in</h1>
+      <h1>Admin Sign in</h1>
 
       <?php if (!empty($message)): ?>
         <div class="alert-message"><?= htmlspecialchars($message, ENT_QUOTES) ?></div>
       <?php endif; ?>
 
-      <form id="loginForm" method="POST" action="/sign-in">
-        <input type="text" name="email" value="<?= htmlspecialchars($email ?? '', ENT_QUOTES) ?>" placeholder="Email atau nomor telepon" required>
+      <form id="loginForm" method="POST" action="/sign-in-admin">
+        <input type="text" name="email" value="<?= htmlspecialchars($email ?? '', ENT_QUOTES) ?>" placeholder="Email admin" required>
         <input type="password" name="password" placeholder="Password" required>
         <div class="options">
             <label>
                 <input type="checkbox" name="remember" <?= !empty($remember) ? 'checked' : '' ?>> Remember me
             </label>
-            <a href="#">Forgot password?</a>
         </div>
         <button type="submit">Continue</button>
       </form>
@@ -39,17 +37,8 @@
         <span></span>
       </div>
 
-            <div class="social-buttons">
-                <a href="#" class="social-icon" aria-label="Continue with Google">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Google_Favicon_2025.svg/960px-Google_Favicon_2025.svg.png" alt="Google">
-                </a>
-                <a href="#" class="social-icon" aria-label="Continue with Facebook">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Facebook_logo_%28square%29.png" alt="Facebook">
-                </a>
-            </div>
-
       <p class="register-text">
-        Don’t have an account? <a href="register">Create Account</a>
+        Back to user login? <a href="/sign-in">Go to sign in</a>
       </p>
     </div>
 

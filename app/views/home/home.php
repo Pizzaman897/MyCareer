@@ -47,9 +47,19 @@
                                 <label>Tell us what you like :</label>
                                 <div>
                                     <?php
-                                    $interests = $_SESSION['career_profile']['interests'] ?? [];
-                                    echo htmlspecialchars($interests[0] ?? '');
+                                    $interests = $interests ?? $_SESSION['career_profile']['interests'] ?? [];
+                                    if (!empty($interests)) {
+                                        echo htmlspecialchars(implode(', ', $interests), ENT_QUOTES);
+                                    } else {
+                                        echo '-';
+                                    }
                                     ?>
+                                </div>
+                            </div>
+                            <div class="profile-field">
+                                <label>&nbsp;</label>
+                                <div>
+                                    <a class="edit-interest-link" href="/interests/edit">Edit interest</a>
                                 </div>
                             </div>
                         </div>

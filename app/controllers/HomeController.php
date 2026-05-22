@@ -27,11 +27,13 @@ class HomeController extends Controller
 
         $userInfoId = $student->getUserInfoId($userPrivateId);
         $profile = $student->getProfile($userPrivateId);
+        $interests = $userInfoId ? $student->getInterestsByUserInfoId($userInfoId) : [];
         $recommended = $userInfoId ? $student->getRecommendationsByUserInfoId($userInfoId) : [];
         $favoriteIds = $student->getFavoriteIdsByUserPrivateId($userPrivateId);
 
         $this->view('home.home', [
             'profile' => $profile,
+            'interests' => $interests,
             'recommended' => $recommended,
             'favoriteIds' => $favoriteIds,
         ]);

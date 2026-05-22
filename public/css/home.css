@@ -92,6 +92,34 @@ body {
   0 4px 8px rgba(0,0,0,.12);
 }
 
+.profile-field:has(.edit-interest-link) div {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.edit-interest-link {
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.edit-interest-link:hover {
+  background: #272727;
+  transform: translateY(-1px);
+}
+
 .recommendations-section {
   margin-bottom: 40px;
 }

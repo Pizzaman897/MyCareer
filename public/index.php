@@ -9,6 +9,10 @@ $router = new Router();
 //register routes
 $router->add('GET', '/landing', 'LandingController', 'landing');
 
+// Admin sign in page
+$router->add('GET', '/sign-in-admin', 'Sign_inController', 'admin_sign_in');
+$router->add('POST', '/sign-in-admin', 'Sign_inController', 'authenticate_admin');
+
 // Sign in page
 $router->add('GET', '/sign-in', 'Sign_inController', 'sign_in');
 $router->add('POST', '/sign-in', 'Sign_inController', 'authenticate');
@@ -20,6 +24,13 @@ $router->add('POST', '/register', 'RegisterController', 'store');
 // Daftar Minat dan Keterampilan
 $router->add('GET', '/personal-information-form', 'InterestController', 'form');
 $router->add('POST', '/personal-information-form', 'InterestController', 'store');
+
+// Edit Interest page
+$router->add('GET', '/interests/edit', 'InterestController', 'edit');
+$router->add('POST', '/interests/edit', 'InterestController', 'updateInterests');
+
+// Logout
+$router->add('GET', '/logout', 'Sign_inController', 'logout');
 
 //Home page
 $router->add('GET', '/home', 'HomeController', 'home');
@@ -53,6 +64,10 @@ $router->add('GET', '/terms-of-service', 'LegalController', 'termsofservice');
 
 // Cookies Policy page
 $router->add('GET', '/cookies-policy', 'LegalController', 'cookiespolicy');
+
+// Admin page
+$router->add('GET', '/admin', 'AdminController', 'dashboard', ['requires_admin' => true]);
+$router->add('GET', '/admin/logout', 'AdminController', 'logout', ['requires_admin' => true]);
 
 $router->run();
 
