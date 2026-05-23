@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 20, 2026 at 10:43 AM
+-- Generation Time: May 23, 2026 at 07:03 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -87,7 +87,10 @@ INSERT INTO `career_paths` (`id`, `name`, `description`, `more_info`) VALUES
 (27, 'Agronomist', 'Study and advise on crop production, soil health, and farming practices to improve yields.', 'Agronomists work with farmers, government agencies, or research institutions. A strong background in plant science and soil management is essential.'),
 (28, 'Film Director', 'Lead the creative vision of a film or video production, guiding the cast and crew.', 'Film directors work in cinema, television, or digital media. Strong storytelling instincts, leadership, and visual communication skills are vital.'),
 (29, 'Screenwriter', 'Write scripts and screenplays for films, TV shows, or digital video content.', 'Screenwriters must understand narrative structure, dialogue, and visual storytelling. Persistence and the ability to accept feedback are key.'),
-(30, 'Film Critic', 'Analyze and review films for publications, websites, or broadcast media.', 'Film critics combine a deep knowledge of cinema with strong writing skills. Building a credible voice and audience is important for career growth.');
+(30, 'Film Critic', 'Analyze and review films for publications, websites, or broadcast media.', 'Film critics combine a deep knowledge of cinema with strong writing skills. Building a credible voice and audience is important for career growth.'),
+(31, 'Web Developer', 'Build and maintain websites or web applications using code.', 'Web developers use languages like HTML, CSS, and JavaScript to create functional websites for businesses.'),
+(32, 'Database Administrator', 'Manage, store, and secure data using specialized software.', 'They ensure that data is organized, easy to retrieve, and protected from unauthorized access or loss.'),
+(33, 'SEO Specialist', 'Improve website visibility on search engines like Google.', 'They analyze trends and optimize website content to increase organic traffic and improve search rankings.');
 
 -- --------------------------------------------------------
 
@@ -135,7 +138,10 @@ INSERT INTO `career_path_interests` (`id`, `career_path_id`, `interest_id`) VALU
 (27, 27, 9),
 (28, 28, 10),
 (29, 29, 10),
-(30, 30, 10);
+(30, 30, 10),
+(31, 31, 11),
+(32, 32, 11),
+(33, 33, 11);
 
 -- --------------------------------------------------------
 
@@ -154,7 +160,8 @@ CREATE TABLE `favorites` (
 --
 
 INSERT INTO `favorites` (`id`, `user_private_id`, `career_path_id`) VALUES
-(1, 1, 1);
+(1, 1, 1),
+(2, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -172,6 +179,7 @@ CREATE TABLE `interests` (
 --
 
 INSERT INTO `interests` (`id`, `name`) VALUES
+(11, 'Coding'),
 (8, 'Cooking'),
 (4, 'Drawing'),
 (9, 'Farming'),
@@ -203,7 +211,10 @@ CREATE TABLE `user_info` (
 --
 
 INSERT INTO `user_info` (`id`, `user_private_id`, `name`, `gender`, `class`, `school`) VALUES
-(1, 1, 'Test User', 'male', 'XII IPA 1', 'SMAN 1 Pontianak');
+(1, 1, 'Test User', 'male', 'XII IPA 1', 'SMAN 1 Pontianak'),
+(3, 4, 'Edward', 'male', 'XI TKJ 3', 'XI TKJ 3'),
+(4, 5, 'EdwardH', 'male', 'XI TKJ 3', 'SMK'),
+(5, 6, 'test2', 'male', 'test2', 'test2');
 
 -- --------------------------------------------------------
 
@@ -222,7 +233,11 @@ CREATE TABLE `user_interests` (
 --
 
 INSERT INTO `user_interests` (`id`, `user_info_id`, `interest_id`) VALUES
-(1, 1, 1);
+(1, 1, 1),
+(10, 3, 2),
+(9, 4, 2),
+(8, 4, 4),
+(11, 5, 11);
 
 -- --------------------------------------------------------
 
@@ -242,7 +257,10 @@ CREATE TABLE `user_private` (
 --
 
 INSERT INTO `user_private` (`id`, `email`, `phone_number`, `password`) VALUES
-(1, 'test@mycareer.com', '081234567890', '$2y$10$DummyHashedPasswordHere1234567890');
+(1, 'test@mycareer.com', '081234567890', '$2y$10$DummyHashedPasswordHere1234567890'),
+(4, 'edwardhansreinaldo@gmail.com', '089502619901', '$2y$10$MzMKpYr1Gf0reC.c7kshceUwwLUayB8huC/NTXj3l9FlKAaxoQgQ2'),
+(5, 'edwardhansreinaldoo@gmail.com', '089502619901', '$2y$10$9DZBhJea8FcaMIk5kqKOH.CQA4W9SUneNTSsDCyxhGltK3/wPyfTW'),
+(6, 'test2@gmail.com', '1234567890', '$2y$10$wVN6bORq1s2tCTdB98MfVOFSUdldKOVDTTB2ShgCHLzXHCn09S3O2');
 
 --
 -- Indexes for dumped tables
@@ -320,43 +338,43 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `career_paths`
 --
 ALTER TABLE `career_paths`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `career_path_interests`
 --
 ALTER TABLE `career_path_interests`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `favorites`
 --
 ALTER TABLE `favorites`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `interests`
 --
 ALTER TABLE `interests`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user_info`
 --
 ALTER TABLE `user_info`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user_interests`
 --
 ALTER TABLE `user_interests`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user_private`
 --
 ALTER TABLE `user_private`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
