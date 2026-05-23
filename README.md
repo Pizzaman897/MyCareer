@@ -8,11 +8,12 @@ A platform designed to guide students toward their ideal careers based on person
 ## The Main Feature
 MyCareer is a small career guidance web app that helps users discover career paths based on their interests and profile. It includes:
 
-user registration and login
-a personal information form where users select their interests and profile details
-a recommendation engine that matches interests to career paths
-admin pages for managing career paths, interests, and assignments
-favorite career tracking for signed-in users
+- user registration and login
+- a personal information form where users select their interests and profile details
+- a recommendation engine that matches interests to career paths
+- admin pages for managing career paths, interests, and assignments
+- favorite career tracking for signed-in users
+
 In short: it’s a tool for students or young users to build a career profile and receive career suggestions based on the interests they choose.
 
 ## Installation Tutorial
