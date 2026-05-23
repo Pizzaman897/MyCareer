@@ -15,10 +15,6 @@
 </head>
 <body>
 
-    <header>
-        <?php require_once '../app/views/Component/Header.php'; ?>
-    </header>
-
     <main class="profile-page">
         <section class="profile-section">
 
@@ -69,10 +65,6 @@
                                 <div class="select-dropdown">
                                     <div class="option">Male</div>
                                     <div class="option">Female</div>
-                                    <div class="option other-option">
-                                        <span>Other :</span>
-                                        <input type="text" placeholder="Input your gender">
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -87,20 +79,19 @@
                                 </div>
                                 <div class="select-dropdown interest-dropdown">
                                     <?php foreach ($interests as $interest): ?>
-    <div class="option" data-id="<?= $interest['id'] ?>">
-        <?= htmlspecialchars($interest['name']) ?>
-    </div>
-<?php endforeach; ?>
+                                        <div class="option" data-id="<?= $interest['id'] ?>">
+                                            <?= htmlspecialchars($interest['name']) ?>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                                <div class="interest-pagination">
+                                    <button type="button" class="page-btn prev" disabled>Prev</button>
+                                    <span class="page-info">1 / 1</span>
+                                    <button type="button" class="page-btn next" disabled>Next</button>
                                 </div>
                             </div>
                         </div>
 
-                    </div>
-
-                    <!-- RIGHT -->
-                    <div class="photo-section">
-                        <div class="photo-circle">📷</div>
-                        <p>Add Photo</p>
                     </div>
 
                 </div>
@@ -114,10 +105,6 @@
 
         </section>
     </main>
-
-    <footer>
-        <?php require_once '../app/views/Component/Footer.php'; ?>
-    </footer>
 
     <script src="/js/interest.js"></script>
 

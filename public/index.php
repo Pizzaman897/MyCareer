@@ -67,7 +67,27 @@ $router->add('GET', '/cookies-policy', 'LegalController', 'cookiespolicy');
 
 // Admin page
 $router->add('GET', '/admin', 'AdminController', 'dashboard', ['requires_admin' => true]);
+$router->add('GET', '/admin/users', 'AdminController', 'users', ['requires_admin' => true]);
+$router->add('GET', '/admin/career-paths', 'AdminController', 'career_paths', ['requires_admin' => true]);
+$router->add('GET', '/admin/career-paths/add', 'AdminController', 'add_career', ['requires_admin' => true]);
+$router->add('POST', '/admin/career-paths/add', 'AdminController', 'store_career', ['requires_admin' => true]);
+$router->add('GET', '/admin/career-paths/edit/{id}', 'AdminController', 'edit_career', ['requires_admin' => true]);
+$router->add('POST', '/admin/career-paths/edit/{id}', 'AdminController', 'update_career', ['requires_admin' => true]);
+$router->add('GET', '/admin/interests', 'AdminController', 'interests', ['requires_admin' => true]);
+$router->add('GET', '/admin/interests/add', 'AdminController', 'add_interest', ['requires_admin' => true]);
+$router->add('POST', '/admin/interests/add', 'AdminController', 'store_interest', ['requires_admin' => true]);
+$router->add('GET', '/admin/interests/edit/{id}', 'AdminController', 'edit_interest', ['requires_admin' => true]);
+$router->add('POST', '/admin/interests/edit/{id}', 'AdminController', 'update_interest', ['requires_admin' => true]);
 $router->add('GET', '/admin/logout', 'AdminController', 'logout', ['requires_admin' => true]);
+// Assign / Manage page for admin (add/edit/assign)
+$router->add('GET', '/admin/assign', 'AdminController', 'assign', ['requires_admin' => true]);
+$router->add('POST', '/admin/assign', 'AdminController', 'assign', ['requires_admin' => true]);
+$router->add('GET', '/admin/manage', 'AdminController', 'assign', ['requires_admin' => true]);
+$router->add('POST', '/admin/manage', 'AdminController', 'assign', ['requires_admin' => true]);
+
+// DELETE routes for interests and career paths
+$router->add('DELETE', '/admin/interests/{id}', 'AdminController', 'delete_interest', ['requires_admin' => true]);
+$router->add('DELETE', '/admin/career-paths/{id}', 'AdminController', 'delete_career', ['requires_admin' => true]);
 
 $router->run();
 

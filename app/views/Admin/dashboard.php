@@ -45,15 +45,15 @@
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-title">Total Users</div>
-                        <div class="stat-value">0</div>
+                        <div class="stat-value"><?php echo htmlspecialchars($totalUsers ?? 0, ENT_QUOTES); ?></div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-title">Career Paths</div>
-                        <div class="stat-value">0</div>
+                        <div class="stat-value"><?php echo htmlspecialchars($totalCareerPaths ?? 0, ENT_QUOTES); ?></div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-title">Active Sessions</div>
-                        <div class="stat-value">0</div>
+                        <div class="stat-value"><?php echo htmlspecialchars($activeSessions ?? 0, ENT_QUOTES); ?></div>
                     </div>
                 </div>
 

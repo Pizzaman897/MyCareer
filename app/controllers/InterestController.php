@@ -53,19 +53,30 @@ class InterestController extends Controller
         }
 
         // Keep only up to 3 interests per your spec
-        $interests = array_values(array_filter($interests, fn($v) => trim((string)$v) !== ''));
-        $interests = array_slice($interests, 0, 3);
+        $interestIds = array_values(array_filter(array_map(fn($v) => (int)$v, $interests), fn($v) => $v > 0));
+        $interestIds = array_values(array_unique($interestIds));
+        $interestIds = array_slice($interestIds, 0, 3);
+
+
+        $db = new Database();
+        $conn = $db->getConnection();
+
+        $interestNames = [];
+        if (!empty($interestIds)) {
+            $idList = implode(',', array_map('intval', $interestIds));
+            $result = mysqli_query($conn, "SELECT id, name FROM interests WHERE id IN ($idList)");
+            while ($row = mysqli_fetch_assoc($result)) {
+                $interestNames[(int)$row['id']] = $row['name'];
+            }
+        }
 
         $_SESSION['career_profile'] = [
             'full_name' => $fullName,
             'class_name' => $className,
             'school_name' => $schoolName,
             'gender' => $gender,
-            'interests' => $interests,
+            'interests' => array_values(array_map(fn($id) => $interestNames[$id] ?? '', $interestIds)),
         ];
-
-        $db = new Database();
-        $conn = $db->getConnection();
 
         // Upsert user_info
         $stmt = mysqli_prepare($conn, 'SELECT id FROM user_info WHERE user_private_id = ? LIMIT 1');
@@ -93,24 +104,13 @@ class InterestController extends Controller
         mysqli_stmt_bind_param($stmt, 'i', $userInfoId);
         mysqli_stmt_execute($stmt);
 
-        // Map interest names -> interest_id
-        $insertStmt = mysqli_prepare($conn, 'INSERT INTO user_interests (user_info_id, interest_id) VALUES (?, ?)');
-        foreach ($interests as $interestName) {
-            $interestName = trim((string)$interestName);
-            if ($interestName === '') continue;
-
-            $q = mysqli_prepare($conn, 'SELECT id FROM interests WHERE name = ? LIMIT 1');
-            mysqli_stmt_bind_param($q, 's', $interestName);
-            mysqli_stmt_execute($q);
-            $ir = mysqli_stmt_get_result($q);
-            $irow = $ir ? mysqli_fetch_assoc($ir) : null;
-            if (!$irow) {
-                continue; // ignore unknown interests
+        if (!empty($interestIds)) {
+            $insertStmt = mysqli_prepare($conn, 'INSERT INTO user_interests (user_info_id, interest_id) VALUES (?, ?)');
+            foreach ($interestIds as $interestId) {
+                mysqli_stmt_bind_param($insertStmt, 'ii', $userInfoId, $interestId);
+                mysqli_stmt_execute($insertStmt);
             }
-
-            $interestId = (int)$irow['id'];
-            mysqli_stmt_bind_param($insertStmt, 'ii', $userInfoId, $interestId);
-            mysqli_stmt_execute($insertStmt);
+            mysqli_stmt_close($insertStmt);
         }
 
         header('Location: /home');

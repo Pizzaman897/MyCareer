@@ -141,25 +141,19 @@ header{
 /* CUSTOM SELECT */
 .custom-select{
     width:100%;
-
+    position:relative;
     border-radius:16px;
-
     background:#e8e8e8;
-
-    overflow:hidden;
-
+    overflow:visible;
     box-shadow:0 3px 8px rgba(0,0,0,.15);
 }
 
 .select-header{
     height:58px;
-
     padding:0 24px;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     cursor:pointer;
 }
 
@@ -172,11 +166,9 @@ header{
 .arrow{
     width:0;
     height:0;
-
     border-left:10px solid transparent;
     border-right:10px solid transparent;
     border-top:14px solid #4a86d9;
-
     transition:.3s;
 }
 
@@ -187,8 +179,13 @@ header{
 /* DROPDOWN */
 .select-dropdown{
     display:none;
-
-    padding:0 24px 18px;
+    position:static;
+    background:#f9f9f9;
+    border-radius:0 0 16px 16px;
+    padding:14px 20px 0;
+    box-shadow:none;
+    max-height:420px;
+    overflow-y:auto;
 }
 
 .custom-select.active .select-dropdown{
@@ -196,13 +193,19 @@ header{
 }
 
 .option{
-    padding:16px 0;
-
-    border-top:1px solid #a9a9a9;
-
-    font-size:20px;
-
+    padding:16px 18px;
+    border-top:1px solid #e1e1e1;
+    font-size:18px;
     cursor:pointer;
+    color:#111;
+    background:#fff;
+    border-radius:12px;
+    margin:8px 0 0;
+    box-shadow:0 2px 6px rgba(0,0,0,0.04);
+}
+
+.option:first-child{
+    margin-top:0;
 }
 
 /* OTHER OPTION */
@@ -228,7 +231,51 @@ header{
 
 /* INTEREST */
 .interest-dropdown{
-    max-height:650px;
+    max-height:340px;
+    padding-bottom:18px;
+}
+
+.interest-pagination{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    margin:16px 0 0;
+    padding:12px 16px;
+    background:#f4f4f4;
+    border-radius:12px;
+    border:1px solid rgba(0,0,0,0.08);
+    position:relative;
+}
+
+.page-btn{
+    border:none;
+    border-radius:12px;
+    padding:12px 18px;
+    background:#1f4ed8;
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .2s ease, transform .15s ease;
+}
+
+.page-btn:hover:not(:disabled){
+    background:#2748ff;
+    transform:translateY(-1px);
+}
+
+.page-btn:disabled{
+    background:#c0c0c0;
+    opacity:0.8;
+    cursor:not-allowed;
+    transform:none;
+}
+
+.page-info{
+    font-size:16px;
+    color:#111;
+    font-weight:600;
 }
 
 /* BUTTON */
