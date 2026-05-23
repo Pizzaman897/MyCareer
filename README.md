@@ -1,7 +1,7 @@
 ### PWL-KELOMPOK-8
 # JEF CINEMA
 
-<img width="1080" height="1080" alt="Logo-removebg-preview 1" src="https://github.com/user-attachments/assets/825ea4cb-1d6e-4ebb-98ff-efe78113c76d" />
+<img width="1080" height="1080" alt="Logo-removebg-preview 1 (1)" src="https://github.com/user-attachments/assets/0513157f-aa68-4ef7-825c-d560f6214b76" />
 
 A platform designed to guide students toward their ideal careers based on personal interests.
 
