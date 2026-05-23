@@ -1,5 +1,5 @@
 ### PWL-KELOMPOK-8
-# JEF CINEMA
+# MyCareer
 
 <img width="1080" height="1080" alt="Logo-removebg-preview 1 (1)" src="https://github.com/user-attachments/assets/0513157f-aa68-4ef7-825c-d560f6214b76" />
 
